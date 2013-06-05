@@ -1,0 +1,22 @@
+Package: RD3Device
+Version: 0.1-0
+Title: R Graphics device to create D3 content
+Author: Duncan Temple Lang
+Maintainer: Duncan Temple Lang <duncan@r-project.org>
+Description: This is an experiment to create a graphics
+  device for R that creates D3 code for displaying
+  the  R plot in JavaScript.
+  As we go forward, we can programmatically annotate 
+  the content of the plot to create interactive, dynamic
+  plots with animation.   
+  This is similar to gridSVG, SVGAnnotation, etc.
+  It is not intended to allow R users to create arbitrary
+  D3 code. It is solely focused on mapping existing R plotting
+  commands using R's graphics system(s) to D3 code.
+  Given the RGraphicsDevice package, this is very easy to write entirely
+  within R. It takes longer to understand the D3 programming details than
+  to implement the graphics device's methods.
+License: GPL-2
+Depends: R (>= 2.7.0), methods, RAutoGenRunTime
+URL: http://www.omegahat.org/RD3Device
+Imports: RAutoGenRunTime, RJSONIO

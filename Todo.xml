@@ -1,0 +1,36 @@
+<topics>
+<topic>
+<title>
+<items>
+<item>
+ternaryplot() doesn't work. Nor does lattice xyplot().
+</item>
+
+<item>
+Insert code into HTML template.
+Borrow code from SVGAnnotation.
+</item>
+
+<item>
+Positioning of title - first block of code in eg.R
+</item>
+
+<item>
+Use different fonts by default.
+Specify in CSS or in R code that pass these on to D3.
+</item>
+
+<item status="done">
+Rotate text. Where is the rotation specified - as a parameter of the text() method.
+Use
+text.attr("transform", function(d) "rotate(90)")
+</item>
+
+<item status="done">
+Map colors to RGB for D3.
+</item>
+
+</items>
+</title>
+</topic>
+</topics>
