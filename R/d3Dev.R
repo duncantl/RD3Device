@@ -5,7 +5,8 @@ library(RGraphicsDevice) #XXXX go when we install the package.
 library(RJSONIO)
 
 d3Device =
-function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
+function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
+          plotVarName = sprintf("_%s", svgVarName))
 {
 
    # don't need activate/deactivate, locator, GEInitDevice, getEvent, size (when resized), mode
@@ -22,25 +23,41 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
 
   pages = list()
   curDivName = div[1]
-  jsCode = makeInitCode(curDivName)
+  jsCode = makeInitCode(curDivName, dim, svgVarName)
 
+  shapeTypes = c("lines", "circles", "rectangles", "polygons", "polylines")
+  
+  sprintf("var %s = [];", shapeTypes)
+
+  addCode = function(cmd, type = NA) {
+     if(!is.na(type))  {
+       cmd[length(cmd)] = paste("el = ", cmd[length(cmd)])
+       cmd = c(cmd, sprintf("%s.%ss.push(el);", plotVarName, type))
+     }
+     jsCode[[length(jsCode) + 1L]] <<- c(jsCode, cmd)
+     if(!is.na(type))
+       names(jsCode)[length(jsCode)] = type
+  }
+    
+  
   dev@line =  function(x1, y1, x2, y2, gcontext, dev) {
      vals = c(x1 = x1, y1 = y1, x2 = x2, y2 = y2)
      cmd = sprintf('%s.append("line")%s;', svgVarName, makeAttrs(vals))
-     jsCode <<- c(jsCode, cmd)
+     addCode(cmd, "line")
   }
   
   dev@circle =  function(x, y, r, gcontext, dev) {
      vals =  c(r = r, cx = x, cy = y)
      graphics = setGraphics(gcontext)
      cmd = sprintf('%s.append("circle")%s.%s;', svgVarName, makeAttrs(vals), graphics)
-     jsCode <<- c(jsCode, cmd)
+     addCode(cmd, "circle")
   }
 
   dev@rect = function(x, y, x1, y1, gcontext, dev) {
      vals =  c(x = min(x, x1), y = min(y, y1), width = abs(x - x1), height = abs(y1 - y))
      cmd = sprintf('%s.append("rect")%s.%s;', svgVarName, makeAttrs(vals), setGraphics(gcontext))
      jsCode <<- c(jsCode, cmd)
+     addCode(cmd, "rectangle")     
   }
 
   dev@text = function(x, y, str, rot, hadj, gcontext, dev) {
@@ -59,8 +76,8 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
                        paste(xtra, collapse = ".")
                     else
                        "")
-     
-     jsCode <<- c(jsCode, cmd)
+
+     addCode(cmd, "text")     
   }
 
   dev@strWidth = function(str, gcontext, dev) {
@@ -68,12 +85,12 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
   }
 
   dev@newPage = function(gcontext, dev) {
-    pages[[ ]]  <<- jsCode 
+    pages[[ curDivName ]]  <<- jsCode 
     curDivName <<- if(length(div) == 1 || length(curDivName) <= length(pages))
                      sprintf("%s%d", div[1], length(pages))
                    else
                      div[length(pages) + 1]
-    jsCode = makeInitCode(curDivName)
+    jsCode = makeInitCode(curDivName, dim, svgVarName)
   }  
 
   ctr = c(polyline = 0L)
@@ -89,11 +106,13 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
     graphics = setGraphics(gcontext)
     cmd = sprintf('%s.append("path").%s.attr("d", polylineFunction%d(polylineData%d));',
                        svgVarName, graphics, count, count)
+
+
+    cmd = c(sprintf('var polylineFunction%d = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");', count),
+            sprintf('var polylineData%d = %s;', count, data),
+            cmd)
     
-    jsCode <<- c(jsCode,
-                 sprintf('var polylineFunction%d = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");', count),
-                 sprintf('var polylineData%d = %s;', count, data),
-                 cmd)
+    addCode(cmd, if(polygon) "polygon" else "polyline")
   }
 
   dev@polygon = function(n, x, y, gcontext, dev) {
@@ -112,7 +131,7 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
 
   dev@close = function(dev) {
     if(length(file))
-       cat(jsCode, file = file, sep = "\n")
+       cat(unlist(jsCode), file = file, sep = "\n")
   }
 
   idev = graphicsDevice(dev, dim, col = "red", fill = "transparent", ps = 10)
@@ -149,12 +168,16 @@ function(x, y)
 
 
 makeInitCode =
-function(div)
+function(div, dim, svgVarName = div, plotVarName = sprintf("_%s", svgVarName))
 {
   init = sprintf('var %s = d3.select("#%s")\n\t.append("svg").attr("width", %d).attr("height", %d);',
                         svgVarName, div, dim[1], dim[2])
-  c(init, "",
+  list(c(init, "",
           # .attr("font-family", "sans-serif") .style("fill", "red")
-    'svg.style("stroke", "black").style("stroke-width", 1);', "")
+    'svg.style("stroke", "black").style("stroke-width", 1);',
+    "",
+    sprintf("var %s = new Plot(%s);", plotVarName, svgVarName),
+    "",
+    "var el;", ""))
 }
   
