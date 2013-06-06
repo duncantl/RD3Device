@@ -5,7 +5,7 @@
 addToHTMLTemplate =
 function(code, outfile = character(),
          html = system.file("template", "template.html", package = "RD3Device"),
-         div = "svg")
+         div = "svg", isFile = length(code) == 1 && file.exists(code))
 {
    doc = htmlParse(html)
    divNode = getNodeSet(doc, sprintf("//div[@id = '%s']", div))
@@ -14,7 +14,11 @@ function(code, outfile = character(),
    else
       divNode = divNode[[1]]
 
-   newXMLNode("script", code, parent = xmlParent(divNode))
+
+   if(isFile)
+     newXMLNode("script", attrs = c(src = code), parent = xmlParent(divNode))     
+   else
+     newXMLNode("script", code, parent = xmlParent(divNode))
 
    if(length(outfile))
      saveXML(doc, outfile)

@@ -1,3 +1,5 @@
 import(RAutoGenRunTime)
 import(RJSONIO)
+import(XML)
+
 export(d3Dev)

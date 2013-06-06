@@ -2,13 +2,53 @@
 <topic>
 <title>
 <items>
+
 <item>
-ternaryplot() doesn't work. Nor does lattice xyplot().
+If we give the device an HTML page and there are multiple
+div's with ids and no content, cycle through these
+when we open a new page.
+Similarly, if given a vector for div, go through those.
+</item>
+
+<item status="done">
+image() function not working.
+Grid lines appearing when shouldn't.
+Rectangles are not in correct locations.
+Simpler example [ in place].
+<br/>
+Is the dimension of the device being set correctly in the C code for R,
+i.e. does R's graphics engine know the correct dimensions.
+<br/>
+rect() is passed  x0, y0, x1, y1, not width and height!
+</item>
+
+<item status="done">
+Map colors to RGB for D3.
+Map to RGB rather than names.
 </item>
 
 <item>
+Allow R programmer to post-process the code,
+e.g. put names on the polygons in a map plot,
+identify the points and add tooltips.
+Can work with groups in D3.
+Can detect these groups based on the common sys.calls()
+for elements.
+<br/>
+Structure the code from the device so that we can post-process it.
+Could do this generically, i.e. get the display list
+and then map this to D3 afterwards.
+</item>
+
+<item>
+ternaryplot() doesn't work. Nor does lattice xyplot().
+Both use grid.
+</item>
+
+<item status="check,extend">
 Insert code into HTML template.
 Borrow code from SVGAnnotation.
+See addCode.R
 </item>
 
 <item>
@@ -20,14 +60,11 @@ Use different fonts by default.
 Specify in CSS or in R code that pass these on to D3.
 </item>
 
+
 <item status="done">
 Rotate text. Where is the rotation specified - as a parameter of the text() method.
 Use
 text.attr("transform", function(d) "rotate(90)")
-</item>
-
-<item status="done">
-Map colors to RGB for D3.
 </item>
 
 </items>

@@ -1,68 +1,53 @@
 # Helpful links.
 # http://www.dashingd3js.com/table-of-contents
 # http://www.dashingd3js.com/svg-basic-shapes-and-d3js
-library(RGraphicsDevice)
+library(RGraphicsDevice) #XXXX go when we install the package.
 library(RJSONIO)
-
 
 d3Device =
 function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
 {
 
-   # don't need activate/deactivate, locator, GEInitDevice, getEvent
+   # don't need activate/deactivate, locator, GEInitDevice, getEvent, size (when resized), mode
    #
-   # need polygon
-   #  newPage, newFrameConfirm, size(?)
+   #  raster, path, cap
    #
-   #  ?textUTF8, strWidthUTF8, state?
+   # need [done] polygon
+   #  newPage, newFrameConfirm (no) , clip
+   #
+   #  ?textUTF8, strWidthUTF8
   
   dev = new("RDevDescMethods")
   dim = as.integer(dim)
 
-  init = sprintf('var %s = d3.select("#%s")\n\t.append("svg").attr("width", %d).attr("height", %d);',
-                        svgVarName, div, dim[1], dim[2])
-  jsCode = c(init, "",
-             'svg.style("stroke", "black").style("stroke-width", 1).attr("font-family", "sans-serif");', "") # .style("fill", "red")
+  pages = list()
+  curDivName = div[1]
+  jsCode = makeInitCode(curDivName)
 
-  makeAttrs = function(vals) {
-     attrs = sprintf('.attr("%s", %f)', names(vals), as.numeric(vals))
-     paste(attrs, collapse = "")
-  }
-
-  convertColor = function(col)  {
-    if(isTransparent(col))
-      "none"
-    else
-      as(col, "RGB")
-  }
-  setGraphics = function(gc) {
-     tmp = gc[ c("fill", "col") ]
-     paste(sprintf('attr("%s", "%s")', names(tmp), sapply(tmp, convertColor)), collapse = ".")
-  }
-  
   dev@line =  function(x1, y1, x2, y2, gcontext, dev) {
      vals = c(x1 = x1, y1 = y1, x2 = x2, y2 = y2)
      cmd = sprintf('%s.append("line")%s;', svgVarName, makeAttrs(vals))
      jsCode <<- c(jsCode, cmd)
   }
+  
   dev@circle =  function(x, y, r, gcontext, dev) {
      vals =  c(r = r, cx = x, cy = y)
-     cmd = sprintf('%s.append("circle")%s;', svgVarName, makeAttrs(vals))
+     graphics = setGraphics(gcontext)
+     cmd = sprintf('%s.append("circle")%s.%s;', svgVarName, makeAttrs(vals), graphics)
      jsCode <<- c(jsCode, cmd)
   }
 
-  dev@rect = function(x, y, w, h, gcontext, dev) {
-     vals =  c(x = x, y = y, width = w, height = h)
-     cmd = sprintf('%s.append("rect")%s;', svgVarName, makeAttrs(vals))
+  dev@rect = function(x, y, x1, y1, gcontext, dev) {
+     vals =  c(x = min(x, x1), y = min(y, y1), width = abs(x - x1), height = abs(y1 - y))
+     cmd = sprintf('%s.append("rect")%s.%s;', svgVarName, makeAttrs(vals), setGraphics(gcontext))
      jsCode <<- c(jsCode, cmd)
   }
-
 
   dev@text = function(x, y, str, rot, hadj, gcontext, dev) {
      vals =  c(x = x, y = y)
      xtra = c()
-
-    #  http://stackoverflow.com/questions/11252753/rotate-x-axis-text-in-d3
+     
+         #  http://stackoverflow.com/questions/11252753/rotate-x-axis-text-in-d3
      if(rot != 0) 
        xtra = c(xtra, sprintf('.attr("transform", function(d) { return "rotate(%f %f,%f)" } )', 360 - rot, x, y))
 
@@ -82,11 +67,18 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
     nchar(str) *  min(10, gcontext $ ps) * gcontext$cex
   }
 
+  dev@newPage = function(gcontext, dev) {
+    pages[[ ]]  <<- jsCode 
+    curDivName <<- if(length(div) == 1 || length(curDivName) <= length(pages))
+                     sprintf("%s%d", div[1], length(pages))
+                   else
+                     div[length(pages) + 1]
+    jsCode = makeInitCode(curDivName)
+  }  
+
   ctr = c(polyline = 0L)
 
-  toJSONRows = function(x, y) 
-    toJSON(mapply(function(a, b) list(x = a, y = b), x, y, SIMPLIFY = FALSE))
-  
+   # polyline is local here so polygon can invoke it.  
   polyline = dev@polyline = function(n, x, y, gcontext, dev, polygon = FALSE) {
     x = x[1:n]
     y = y[1:n]
@@ -102,7 +94,6 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
                  sprintf('var polylineFunction%d = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");', count),
                  sprintf('var polylineData%d = %s;', count, data),
                  cmd)
-
   }
 
   dev@polygon = function(n, x, y, gcontext, dev) {
@@ -113,7 +104,7 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
     dev$ipr = rep(1/72.27, 2)
     dev$cra = rep(c(6, 13)/12) * 10
     dev$startps = 10
-    dev$canClip = TRUE
+    dev$canClip = FALSE # XXXX TRUE
     dev$canChangeGamma = TRUE
     dev$startgamma = 1 
     dev$startcol = as("red", "RGBInt")
@@ -122,11 +113,48 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg")
   dev@close = function(dev) {
     if(length(file))
        cat(jsCode, file = file, sep = "\n")
-    else
-      cat("can't get at the code I created!")
   }
 
   idev = graphicsDevice(dev, dim, col = "red", fill = "transparent", ps = 10)
 
-  list(dev = idev, device = dev)
+  list(dev = idev, device = dev, getCode = function() jsCode)
 }
+
+
+
+
+makeAttrs =
+function(vals) {
+   attrs = sprintf('.attr("%s", %f)', names(vals), as.numeric(vals))
+   paste(attrs, collapse = "")
+}
+
+convertColor =
+function(col)  {
+  if(isTransparent(col))
+    "none"
+  else {
+    vals = col2rgb(as(col, "RGB"))
+    sprintf("rgb(%s)", paste(vals, collapse = ", "))
+  }
+}
+setGraphics = function(gc) {
+   tmp = gc[ c("fill", "col") ]
+   paste(sprintf('attr("%s", "%s")', names(tmp), sapply(tmp, convertColor)), collapse = ".")
+}
+
+toJSONRows =
+function(x, y) 
+    toJSON(mapply(function(a, b) list(x = a, y = b), x, y, SIMPLIFY = FALSE))
+
+
+makeInitCode =
+function(div)
+{
+  init = sprintf('var %s = d3.select("#%s")\n\t.append("svg").attr("width", %d).attr("height", %d);',
+                        svgVarName, div, dim[1], dim[2])
+  c(init, "",
+          # .attr("font-family", "sans-serif") .style("fill", "red")
+    'svg.style("stroke", "black").style("stroke-width", 1);', "")
+}
+  

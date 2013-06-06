@@ -19,4 +19,4 @@ Description: This is an experiment to create a graphics
 License: GPL-2
 Depends: R (>= 2.7.0), methods, RAutoGenRunTime
 URL: http://www.omegahat.org/RD3Device
-Imports: RAutoGenRunTime, RJSONIO
+Imports: RAutoGenRunTime, RJSONIO, XML
