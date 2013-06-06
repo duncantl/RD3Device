@@ -43,6 +43,19 @@ library(igraph)
 plot( graph.tree(10, 2), vertex.size = 32)
 dev.off()
 
+source("d3Dev.R")
+dev = d3Device(file = "../../foo.js")
+par(mfrow = c(1, 2))
+library(igraph)
+plot( graph.tree(10, 2), vertex.size = 32)
+library(maps)
+map('usa')
+dev.off()
+
+
+
+
+
 ###############
 # Not behaving yet.
 #
