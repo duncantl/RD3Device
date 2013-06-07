@@ -1,6 +1,8 @@
 source("d3Dev.R")
 dev = d3Device(file = "../../foo.js")
 plot(1:10, cex = 2, main = "A title")
+abline(v = 5, col = "red")
+abline(h = 5, col = "blue")
 dev.off()
 
 

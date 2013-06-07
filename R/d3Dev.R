@@ -25,39 +25,46 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
   curDivName = div[1]
   jsCode = makeInitCode(curDivName, dim, svgVarName)
 
-  shapeTypes = c("lines", "circles", "rectangles", "polygons", "polylines")
-  
-  sprintf("var %s = [];", shapeTypes)
+  calls = list(sys.calls())
 
-  addCode = function(cmd, type = NA) {
+  addCode = function(cmd, type = NA, attrs = NULL) {
      if(!is.na(type))  {
-       cmd[length(cmd)] = paste("el = ", cmd[length(cmd)])
+       cmd[length(cmd)] = paste("el =", cmd[length(cmd)])
        cmd = c(cmd, sprintf("%s.%ss.push(el);", plotVarName, type))
      }
-     jsCode[[length(jsCode) + 1L]] <<- c(jsCode, cmd)
-     if(!is.na(type))
-       names(jsCode)[length(jsCode)] = type
+
+     if(length(attrs))
+       attributes(cmd) = attrs
+     
+     jsCode[[length(jsCode) + 1L]] <<- cmd # c(jsCode, cmd)
+     if(!is.na(type)) 
+       names(jsCode)[length(jsCode)] <<- type
+
+     k = sys.calls()
+     calls[[length(calls)+1L]] <<-  k[1:(length(k) - 2)] # get rid of this call and the one above it
+                                                         # which are the device function calls.
   }
     
   
   dev@line =  function(x1, y1, x2, y2, gcontext, dev) {
      vals = c(x1 = x1, y1 = y1, x2 = x2, y2 = y2)
-     cmd = sprintf('%s.append("line")%s;', svgVarName, makeAttrs(vals))
-     addCode(cmd, "line")
+     graphics = setGraphics(gcontext)     
+     cmd = sprintf('%s.append("line")%s.%s;', svgVarName, makeAttrs(vals), graphics)
+     addCode(cmd, "line", list(x1 = x1, y1 = y1, x2 = x2, y2 = y2))
   }
   
   dev@circle =  function(x, y, r, gcontext, dev) {
      vals =  c(r = r, cx = x, cy = y)
      graphics = setGraphics(gcontext)
      cmd = sprintf('%s.append("circle")%s.%s;', svgVarName, makeAttrs(vals), graphics)
-     addCode(cmd, "circle")
+     addCode(cmd, "circle", list(x = x, y = y, r = r))
   }
 
   dev@rect = function(x, y, x1, y1, gcontext, dev) {
      vals =  c(x = min(x, x1), y = min(y, y1), width = abs(x - x1), height = abs(y1 - y))
      cmd = sprintf('%s.append("rect")%s.%s;', svgVarName, makeAttrs(vals), setGraphics(gcontext))
      jsCode <<- c(jsCode, cmd)
-     addCode(cmd, "rectangle")     
+     addCode(cmd, "rectangle", list(x = x, y = y, x1 = x1, y1 = y1))
   }
 
   dev@text = function(x, y, str, rot, hadj, gcontext, dev) {
@@ -68,20 +75,21 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
      if(rot != 0) 
        xtra = c(xtra, sprintf('.attr("transform", function(d) { return "rotate(%f %f,%f)" } )', 360 - rot, x, y))
 
-     cmd = sprintf('%s.append("text")%s.text("%s")%s;',
+     cmd = sprintf('%s.append("text")%s.%s.text("%s")%s;',
                     svgVarName,
                     makeAttrs(vals),
+                    setGraphics(gcontext),
                     str,
                     if(length(xtra))
                        paste(xtra, collapse = ".")
                     else
                        "")
 
-     addCode(cmd, "text")     
+     addCode(cmd, "text", list(text = str, x = x, y = y, rot = rot))
   }
 
   dev@strWidth = function(str, gcontext, dev) {
-    nchar(str) *  min(10, gcontext $ ps) * gcontext$cex
+    nchar(str) *  gcontext $ ps * gcontext$cex
   }
 
   dev@newPage = function(gcontext, dev) {
@@ -126,7 +134,7 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
     dev$canClip = FALSE # XXXX TRUE
     dev$canChangeGamma = TRUE
     dev$startgamma = 1 
-    dev$startcol = as("red", "RGBInt")
+    dev$startcol = as("black", "RGBInt")
   }
 
   dev@close = function(dev) {
@@ -134,9 +142,9 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
        cat(unlist(jsCode), file = file, sep = "\n")
   }
 
-  idev = graphicsDevice(dev, dim, col = "red", fill = "transparent", ps = 10)
+  idev = graphicsDevice(dev, dim, col = "black", fill = "transparent", ps = 10)
 
-  list(dev = idev, device = dev, getCode = function() jsCode)
+  list(dev = idev, device = dev, getCode = function() jsCode, getCalls = function() structure(calls, names = names(jsCode)))
 }
 
 
@@ -158,7 +166,7 @@ function(col)  {
   }
 }
 setGraphics = function(gc) {
-   tmp = gc[ c("fill", "col") ]
+   tmp = structure(gc[ c("fill", "col") ], names = c("fill", "stroke"))
    paste(sprintf('attr("%s", "%s")', names(tmp), sapply(tmp, convertColor)), collapse = ".")
 }
 
@@ -172,11 +180,11 @@ function(div, dim, svgVarName = div, plotVarName = sprintf("_%s", svgVarName))
 {
   init = sprintf('var %s = d3.select("#%s")\n\t.append("svg").attr("width", %d).attr("height", %d);',
                         svgVarName, div, dim[1], dim[2])
-  list(c(init, "",
+ list(init = c(init, "",
           # .attr("font-family", "sans-serif") .style("fill", "red")
     'svg.style("stroke", "black").style("stroke-width", 1);',
     "",
-    sprintf("var %s = new Plot(%s);", plotVarName, svgVarName),
+    sprintf("var %s = new makePlot(%s);", plotVarName, svgVarName),
     "",
     "var el;", ""))
 }
