@@ -1,3 +1,7 @@
+# These have basically nothing specific about D3
+# We can use them from RGraphicsDevice if we collect the system
+# calls.
+
 calledFrom =
   #
   # query the system calls when creating the plot

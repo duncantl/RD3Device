@@ -144,7 +144,12 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
 
   idev = graphicsDevice(dev, dim, col = "black", fill = "transparent", ps = 10)
 
-  list(dev = idev, device = dev, getCode = function() jsCode, getCalls = function() structure(calls, names = names(jsCode)))
+  list(dev = idev, device = dev,
+       getCode = function() jsCode,
+       getCalls = function() structure(calls, names = names(jsCode)),
+       getJSInfo = function()
+                     c(svgVarName = svgVarName,  plotVarName = plotVarName, divName = div)
+      )
 }
 
 
