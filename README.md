@@ -8,12 +8,6 @@ graphics engine to create plots, but render them via JavaScript
 code that uses D3.js.  We could also use the Raphael graphics
 device the Gabe Becker developed.
 
-The idea in this package, at present, is not to provide
-R functions that create the particular plots provided by D3
-itself.  People are writing wrappers to those.
-Instead, this uses R's graphics functionality to create
-regular R plots and render them using D3.
-
 The graphics device in R creates the JavaScript code for the D3
 display.  Before we write this code to a file, we can post-process it
 and make the elements interactive, animated, etc.  Mapping the D3 code
@@ -38,6 +32,11 @@ create interactive, animated plots.
 
 We can also create the SVG ourselves, either directly with our own
 graphics device or via, e.g., gridSVG, or with the svg() device in R.
+
+The package illustrates how we might write simple wrappers to
+JavaScript template code. We might extend this or even provide a more
+extensive interface to allow creation of D3 code in R. However, this
+is not the focus of this package.
 
 
 

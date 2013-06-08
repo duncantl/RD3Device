@@ -2,7 +2,7 @@ import(RAutoGenRunTime)
 import(RJSONIO)
 import(XML)
 
-export(d3Dev)
+export(d3Device)
 
 export(d3Tree, d3Graph)
 

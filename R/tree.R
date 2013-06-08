@@ -4,7 +4,7 @@ d3Tree =
   #
   # a = list(name = "a.xml", children = list( list(name = "b", children = list()), list(name = "c", children = list(list(name = "xyz", children = list(list(name = "w", children = list())))))))
   # 
-  #
+  # browseURL(d3Tree(a, tempfile()))
   #
   #
 function(data, out = character(),

@@ -11,7 +11,7 @@ d3Graph =
 
   #
   # @example load(system.file("examples", "callGraph.rda", package = "RD3Device"))
-  #          browseURL(d3Graph(callGraph, tempfile(), "../template/graph.html", "../JavaScript/graph.js"))
+  #          browseURL(d3Graph(callGraph, tempfile()))
   #
   #
 function(data, out = character(),
