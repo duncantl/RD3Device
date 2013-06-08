@@ -3,3 +3,6 @@ import(RJSONIO)
 import(XML)
 
 export(d3Dev)
+
+export(d3Tree, d3Graph)
+
