@@ -21,37 +21,9 @@ function(data, out = character(),
          d3 = "http://d3js.org/d3.v3.min.js",
          varName = "graph")
 {
-  graph = data
-  
-  hdoc = htmlParse(htmlTemplate, FALSE)
 
-  setD3Source(hdoc, d3)
-  
-  addData(graph, hdoc, out[3], varName)
-  addCode(hdoc, jsTemplate, out[2], inline)
-
-  
-if(FALSE) {
-  dnode = getNodeSet(hdoc, "//script[@id = 'data']")[[1]]
-  jnode = getNodeSet(hdoc, "//script[@id = 'js']")[[1]]
-  
-  if(inline || length(out) < 2) {
-    node = newXMLNode("script",
-                       "var", varName, "=",  toJSON(graph), ";")
-    addChildren(dnode, node, after = FALSE)
-#    addChildren(jnode, paste(readLines(jsTemplate), collapse = "\n"))
-  } else {
-    addData(data, hdoc, out[2], varName)
-    cat("var", varName, "=",  toJSON(graph), ";", file = out[2])
-    xmlAttrs(dnode) = c(src = out[2])
-#    xmlAttrs(jnode) = c(src = jsTemplate)
-  }
-}
-
-  if(length(out) && !is.na(out[1]))
-    saveXML(hdoc, out[1])
-  else
-    invisible(hdoc)
+  # Coerce the data to the appropriate form. Later we'll have classes and methods.
+  createDocument(data, out, htmlTemplate, jsTemplate, inline, d3, varName)   
 }
 
 setD3Source =
@@ -78,7 +50,7 @@ function(data, hdoc, out, varName)
 
   dnode = getNodeSet(hdoc, "//script[@id = 'data']")
   dnode = if(length(dnode) == 0) 
-             newXMLNode("script", parent = xmlRoot(hdoc)[["body"]])
+             newXMLNode("script", parent = xmlRoot(hdoc)[["body"]], at = 1) # make certain comes before js code.
           else
              dnode[[1]]
   
