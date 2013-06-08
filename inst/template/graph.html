@@ -1,0 +1,26 @@
+<!-- Taken from http://bl.ocks.org/mbostock/4062045 -->
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+</style>
+<body>
+<script id="d3" src="http://d3js.org/d3.v3.min.js"></script>
+<div style="visibility: hidden">
+ The data should be in a variable named graph.
+     It should be of the form { nodes: [ {name: "value"}, ....],
+                                links: [ {source: number, target: number}, ...]
+                              }
+</div>
+<script id="data"></script>
+<script id="js"></script>
