@@ -35,15 +35,16 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
 
      if(length(attrs))
        attributes(cmd) = attrs
+
      
      jsCode[[length(jsCode) + 1L]] <<- cmd # c(jsCode, cmd)
      if(!is.na(type)) 
        names(jsCode)[length(jsCode)] <<- type
 
      k = sys.calls()
-     calls[[length(calls)+1L]] <<-  k[1:(length(k) - 2)] # get rid of this call and the one above it
+     calls[[ length(calls) + 1L ]] <<-  k[1:(length(k) - 2)] # get rid of this call and the one above it
                                                          # which are the device function calls.
-  }
+   }
     
   
   dev@line =  function(x1, y1, x2, y2, gcontext, dev) {
@@ -63,7 +64,6 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
   dev@rect = function(x, y, x1, y1, gcontext, dev) {
      vals =  c(x = min(x, x1), y = min(y, y1), width = abs(x - x1), height = abs(y1 - y))
      cmd = sprintf('%s.append("rect")%s.%s;', svgVarName, makeAttrs(vals), setGraphics(gcontext))
-     jsCode <<- c(jsCode, cmd)
      addCode(cmd, "rectangle", list(x = x, y = y, x1 = x1, y1 = y1))
   }
 
@@ -131,6 +131,7 @@ function(dim = c(800, 600), file = character(), svgVarName = "svg", div = "svg",
     dev$ipr = rep(1/72.27, 2)
     dev$cra = rep(c(6, 13)/12) * 10
     dev$startps = 10
+    dev$startfont = 1    
     dev$canClip = FALSE # XXXX TRUE
     dev$canChangeGamma = TRUE
     dev$startgamma = 1 

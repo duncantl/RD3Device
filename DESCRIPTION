@@ -17,6 +17,6 @@ Description: This is an experiment to create a graphics
   within R. It takes longer to understand the D3 programming details than
   to implement the graphics device's methods.
 License: GPL-2
-Depends: R (>= 2.7.0), methods, RAutoGenRunTime
+Depends: R (>= 2.7.0), methods, RAutoGenRunTime, RGraphicsDevice
 URL: http://www.omegahat.org/RD3Device
 Imports: RAutoGenRunTime, RJSONIO, XML

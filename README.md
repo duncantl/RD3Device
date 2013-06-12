@@ -37,6 +37,3 @@ The package illustrates how we might write simple wrappers to
 JavaScript template code. We might extend this or even provide a more
 extensive interface to allow creation of D3 code in R. However, this
 is not the focus of this package.
-
-
-
