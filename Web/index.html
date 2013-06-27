@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<link rel="stylesheet" href="http://www.omegahat.org/OmegaTech.css">
+<title>RD3Device</title>
+</head>
+
+<body>
+<h1>RD3Device</h1>
+
+<p align="right"><a href="RD3Device_0.1-0.tar.gz">RD3Device_0.1-0.tar.gz</a></p>
+<p align="right"><a href="https://github.com/duncantl/RD3Device.git">RCUDA
+on github</a></p>
+<p>
+
+
+This package implements an R graphics device that generates D3
+JavaScript code to render the R plots in a Web browser.  It allows us
+to export R graphics to a Web browser using D3. It also allows us to
+post-process the generated code and to add interactivity.
+
+<p>
+
+
+<p> In addition to rendering R graphics via D3, the package also
+provides two functions to create D3 displays using D3's own graphical
+layouts.
+
+<p>
+This is currently a rapidly created prototype and exploration
+of some of the ideas.
+This also explores how we can match graphical elements to
+how they were created and so identify, e.g., data points,
+tick marks on axes, text in legends, etc.
+This allows us to post-process the elements to add interaction
+and animation.
+
+
+<p>
+There are some similarities between this package and
+gridSVG and SVGAnnotation.
+
+
+<p>
+The code is entirely written in R, leveraging the RGraphicsDevice
+package to write a device with R functions.
+This makes it quite easy to change how we generate the JavaScript
+code and post-process it.
+
+
+<hr>
+<address><a href="http://www.stat.ucdavis.edu/~duncan">Duncan Temple Lang</a>
+<a href=mailto:dtemplelang@ucdavis.edu>&lt;dtemplelang@ucdavis.edu&gt;</a></address>
+<!-- hhmts start -->
+Last modified: Thu Jun 27 09:06:12 PDT 2013
+<!-- hhmts end -->
+</body> </html>
