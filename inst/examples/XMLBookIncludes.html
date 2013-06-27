@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Tree Demo</title>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="UTF-8"></script><script type="text/javascript" src="../d3/d3.layout.js"></script><style>
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2.5px;
+}
+</style>
+</head>
+<body>
+ 
+    <div id="tree"></div>
+    <script id="data">var treeData ={
+ "name": "book.xml",
+"children": [
+ {
+ "name": "dedication.xml",
+"children": [] 
+},
+{
+ "name": "prefaceNew.xml",
+"children": [
+ {
+ "name": "Conventions.xml",
+"children": [] 
+},
+{
+ "name": "acknowledgements.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "partI_Intro.xml",
+"children": [] 
+},
+{
+ "name": "GettingStarted/GettingStarted.Rdb",
+"children": [
+ {
+ "name": "examples/countryPopulations/countryPopSample.html" 
+} 
+] 
+},
+{
+ "name": "XMLBasics/XMLBasics.xml",
+"children": [
+ {
+ "name": "fuelData.xml" 
+},
+{
+ "name": "../WebTechData/RawData/snippetXHtmlDTD.txt" 
+},
+{
+ "name": "WebTechData/RawData/KyphosisRpartExtract.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "ParseXML/simpleParseXML.xml",
+"children": [
+ {
+ "name": "ParseXML/parseOtherTags.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/htmlParse.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/inputSources.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/encoding.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/xmlParseDoc.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "XPath/XPath.xml",
+"children": [
+ {
+ "name": "XPath/xpathMolecules.xml",
+"children": [] 
+},
+{
+ "name": "cube.xml" 
+},
+{
+ "name": "XPath/XPathAxes.xml",
+"children": [] 
+},
+{
+ "name": "XPath/XPathFuncs.xml",
+"children": [] 
+},
+{
+ "name": "XPath/documentOrder.xml",
+"children": [] 
+},
+{
+ "name": "XPath/XPathSmallExamples.xml",
+"children": [] 
+},
+{
+ "name": "../WebTechData/RawData/JStatSoft/Lumley.xml" 
+},
+{
+ "name": "ParseXML/XPathNamespaces.xml",
+"children": [] 
+},
+{
+ "name": "XPath/xinclude.xml",
+"children": [
+ {
+ "name": "XPath/exIncludePtr.xml",
+"children": [
+ {
+ "name": "euroAUD04.xml" 
+},
+{
+ "name": "euroAUDTotal.xml" 
+} 
+] 
+} 
+] 
+},
+{
+ "name": "XPath/xpathApplyFunctionTable.xml",
+"children": [
+ {
+ "name": "ParseXML/simpleParseXML.xml",
+"children": [
+ {
+ "name": "ParseXML/parseOtherTags.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/htmlParse.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/inputSources.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/encoding.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/xmlParseDoc.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "ParseXML/simpleParseXML.xml",
+"children": [
+ {
+ "name": "ParseXML/parseOtherTags.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/htmlParse.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/inputSources.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/encoding.xml",
+"children": [] 
+},
+{
+ "name": "ParseXML/xmlParseDoc.xml",
+"children": [] 
+} 
+] 
+} 
+] 
+} 
+] 
+},
+{
+ "name": "ParsingStrategies/ParseXML.xml",
+"children": [
+ {
+ "name": "ParsingStrategies/BasicStrategies.xml",
+"children": [
+ {
+ "name": "ParsingStrategies/readHTMLTable.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/plist.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/xml2df.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "ParsingStrategies/htmlScrape.xml",
+"children": [
+ {
+ "name": "ParsingStrategies/nytimesHeadlines.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/kaggle.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "ParsingStrategies/baseball.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/xpathAddingMissingNodes.xml",
+"children": [
+ {
+ "name": "SamplePages/MissingObsNode.xml" 
+} 
+] 
+},
+{
+ "name": "ParseXML/parseXInclude.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/schema.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/handlers.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/SAXStateObject.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/SAXbranches.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/ContextFunctions.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/SAXConnections.xml",
+"children": [] 
+},
+{
+ "name": "XML/itunes.xml",
+"children": [] 
+},
+{
+ "name": "ParsingStrategies/ParsingStrategiesFunctionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "WriteXML/WriteXML.xml",
+"children": [
+ {
+ "name": "WriteXML/Examples/chipXHTML.xml",
+"children": [] 
+},
+{
+ "name": "WriteXML/Examples/greatCircle.xml",
+"children": [
+ {
+ "name": "../../WebTechData/RawData/greatCircleAbbrev.kml" 
+} 
+] 
+},
+{
+ "name": "WriteXML/Examples/chipXHTML.xml",
+"children": [] 
+},
+{
+ "name": "WriteXML/GeneratingWithStrings.xml",
+"children": [
+ {
+ "name": "WriteXML/writeKMLWithStrings.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "WriteXML/namespaces.xml",
+"children": [
+ {
+ "name": "WriteXML/Examples/gesmesNamespace.xml",
+"children": [] 
+},
+{
+ "name": "WriteXML/namespaceRefs.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "WriteXML/treeRepresentations.xml",
+"children": [] 
+},
+{
+ "name": "WriteXML/summaryWriteFuncs.xml",
+"children": [
+ {
+ "name": "WriteXML/summaryModifyFuncs.xml",
+"children": [] 
+} 
+] 
+} 
+] 
+},
+{
+ "name": "JSON/JSON.xml",
+"children": [
+ {
+ "name": "JSON/kiva.Rdb",
+"children": [] 
+},
+{
+ "name": "JSON/ecmaScript2.Rdb",
+"children": [] 
+},
+{
+ "name": "JSON/elasticSearch.Rdb",
+"children": [] 
+},
+{
+ "name": "JSON/extensions.Rdb",
+"children": [] 
+},
+{
+ "name": "JSON/functionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "partII_Intro.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/RCurl.xml",
+"children": [
+ {
+ "name": "RCurl/postForm.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/generalPOST.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/PUT.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/encoding.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/persistentConnections.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/optionsSidebar.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/multipleRequests.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/highlevel.xml",
+"children": [
+ {
+ "name": "RCurl/readfunction.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "RCurl/passwords_eg.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/cookies.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/ssl_eg.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/proxy.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/curlInfo.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/curlVersion.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/scp.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/errors.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/debuggingRequests.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/curlCommandLine.xml",
+"children": [] 
+},
+{
+ "name": "RCurl/functionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "RHTMLForms/htmlForms.xml",
+"children": [
+ {
+ "name": "RHTMLForms/cpi.xml",
+"children": [] 
+},
+{
+ "name": "RHTMLForms/pems.xml",
+"children": [] 
+},
+{
+ "name": "RHTMLForms/airlineDelays.xml",
+"children": [] 
+},
+{
+ "name": "RHTMLForms/funcSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "REST/REST.xml",
+"children": [
+ {
+ "name": "REST/RESTIntro.xml",
+"children": [
+ {
+ "name": "REST/SOAPvsREST.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "REST/WorldBankClimateDataAPI.xml",
+"children": [] 
+},
+{
+ "name": "REST/couchDB.xml",
+"children": [] 
+},
+{
+ "name": "REST/zillow.xml",
+"children": [] 
+},
+{
+ "name": "REST/NOAA.xml",
+"children": [] 
+},
+{
+ "name": "REST/googleDocs.xml",
+"children": [] 
+},
+{
+ "name": "REST/newAmazonS3.xml",
+"children": [] 
+},
+{
+ "name": "REST/wadl.xml",
+"children": [
+ {
+ "name": "flickrMethodDescription.xml" 
+} 
+] 
+},
+{
+ "name": "REST/extensions.Rdb",
+"children": [] 
+},
+{
+ "name": "REST/functionSummaryTable.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "XMLRPC/xmlrpc.Rdb",
+"children": [
+ {
+ "name": "XMLRPC/wordpress.Rdb",
+"children": [] 
+},
+{
+ "name": "XMLRPC/ubigraph.Rdb",
+"children": [] 
+},
+{
+ "name": "XMLRPC/extensions.Rdb",
+"children": [] 
+},
+{
+ "name": "XMLRPC/funcSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "SOAP/SimpleSOAP.Rdb",
+"children": [
+ {
+ "name": "SOAP/chemspiderExample.Rdb",
+"children": [] 
+},
+{
+ "name": "SOAP/soapFunction.Rdb",
+"children": [] 
+},
+{
+ "name": "SOAP/soapErrors.Rdb",
+"children": [] 
+},
+{
+ "name": "SOAP/soapHeader.Rdb",
+"children": [] 
+},
+{
+ "name": "SOAP/customizeCodeGen.Rdb",
+"children": [] 
+},
+{
+ "name": "SOAP/extensions.Rdb",
+"children": [] 
+},
+{
+ "name": "SOAP/soapFunctionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "OAuth/oauth.Rdb",
+"children": [
+ {
+ "name": "OAuth/workflow.Rdb",
+"children": [] 
+},
+{
+ "name": "OAuth/digitalSignature.Rdb",
+"children": [] 
+},
+{
+ "name": "OAuth/googleOAuth2.Rdb",
+"children": [] 
+},
+{
+ "name": "OAuth/oauthFunctionSummary.xml",
+"children": [] 
+},
+{
+ "name": "OAuth/biblio.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "appsIntro.xml",
+"children": [] 
+},
+{
+ "name": "XMLSchema/XMLSchema.xml",
+"children": [
+ {
+ "name": "XMLSchema/mapTypesToR.Rdb",
+"children": [
+ {
+ "name": "XMLSchema/LatLonBoxType.Rdb",
+"children": [] 
+},
+{
+ "name": "XMLSchema/eGQueryResultType.Rdb",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "XMLSchema/extensions.Rdb",
+"children": [] 
+},
+{
+ "name": "XMLSchema/functionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "Spreadsheets/Spreadsheets.xml",
+"children": [
+ {
+ "name": "Spreadsheets/simpleExtract.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/simpleExtractFromManySheets.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/OfficeOpenXML.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/extractDataFrames.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/complexHeaders.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/createReport.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/createReport.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/createReport.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/OfficeOpenXML_Rels.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/googleDocsAddSheet.xml",
+"children": [] 
+},
+{
+ "name": "Spreadsheets/RExcelFunctionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "SVGAnnotation/SVGAnnotation.xml",
+"children": [
+ {
+ "name": "SVGAnnotation/otherApproaches.xml",
+"children": [] 
+},
+{
+ "name": "SVGAnnotation/svgInHTML.xml",
+"children": [] 
+},
+{
+ "name": "SVGAnnotation/svgHTMLEventH.xml",
+"children": [] 
+},
+{
+ "name": "SVGAnnotation/animation.xml",
+"children": [
+ {
+ "name": "SVGAnnotation/exJSAnimateMap.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "SVGAnnotation/svgCreatedByR.xml",
+"children": [] 
+},
+{
+ "name": "SVGAnnotation/textInSVGInR.xml",
+"children": [] 
+},
+{
+ "name": "SVGAnnotation/stylesInSVG.xml",
+"children": [] 
+},
+{
+ "name": "SVGAnnotation/animationInSVG.xml",
+"children": [] 
+},
+{
+ "name": "SVGAnnotation/FunctionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "KML/KML.xml",
+"children": [
+ {
+ "name": "KML/Examples/Earthquakes/earthquakesChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/ElephantSeal/elephantSealChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/ElephantSeal/elephantSealChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/Earthquakes/earthquakesChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/ElephantSeal/elephantSealChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/Earthquakes/earthquakesChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/CityTemps/cityTempsChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/CityTemps/cityTempBPChapterVersion.xml",
+"children": [] 
+},
+{
+ "name": "KML/Examples/SFHousing/housingChapterVersion.xml",
+"children": [
+ {
+ "name": "CityEventHandlers.js" 
+},
+{
+ "name": "updateVisibility.js" 
+} 
+] 
+},
+{
+ "name": "KML/Examples/SFHousing/housingChapterVersion.xml",
+"children": [
+ {
+ "name": "CityEventHandlers.js" 
+},
+{
+ "name": "updateVisibility.js" 
+} 
+] 
+},
+{
+ "name": "KML/extensions.Rdb",
+"children": [] 
+},
+{
+ "name": "KML/FunctionSummary.xml",
+"children": [] 
+} 
+] 
+},
+{
+ "name": "RichStructuredDocs/richDocsChap.xml",
+"children": [] 
+},
+{
+ "name": "bibliography.xml",
+"children": [] 
+},
+{
+ "name": "colophon.xml",
+"children": [] 
+} 
+] 
+};</script><script id="js" type="text/javascript">      // Create a svg canvas
+      var vis = d3.select("#tree").append("svg:svg")
+      .attr("width", 800)
+      .attr("height", 800)
+      .append("svg:g")
+      .attr("transform", "translate(40, 0)"); // shift everything to the right
+ 
+      // Create a tree "canvas"
+      var tree = d3.layout.tree()
+    .size([800,600]);
+ 
+      var diagonal = d3.svg.diagonal()
+      // change x and y (for the left to right tree)
+//      .projection(function(d) { return [d.y, d.x]; });
+ 
+      // Preparing the data for the tree layout, convert data into an array of nodes
+      var nodes = tree.nodes(treeData);
+      // Create an array with all the links
+      var links = tree.links(nodes);
+ 
+      var link = vis.selectAll("pathlink")
+      .data(links)
+      .enter().append("svg:path")
+      .attr("class", "link")
+      .attr("d", diagonal)
+ 
+      var node = vis.selectAll("g.node")
+      .data(nodes)
+      .enter().append("svg:g")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+  //    .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+ 
+      // Add the dot at every node
+      node.append("svg:circle")
+      .attr("r", 3.5)
+      .attr("svg:title", function(d) { return(d.name); });
+ 
+      // place the name atribute left or right depending if children
+ if(false)
+      node.append("svg:text")
+      .attr("dx", function(d) { return d.children ? 300 : 300; })
+      .attr("dy", 20)
+      .attr("text-anchor", function(d) { return d.children ? "end" : "start"; })
+      .text(function(d) { return d.name; })
+ </script>
+</body>
+</html>
