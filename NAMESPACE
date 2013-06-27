@@ -6,3 +6,4 @@ export(d3Device)
 
 export(d3Tree, d3Graph)
 
+export(addToHTMLTemplate)

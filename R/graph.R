@@ -65,7 +65,7 @@ function(data, hdoc, out, varName)
 addCode =
 function(hdoc, src, out, inline = length(out) && !is.na(out))
 {
-   if(!inline) {
+   if(!inline && !is.na(out)) {
      code = if(is(src, "AsIs")) src else readLines(src)
      cat(code, file = out, sep = "\n")
    }
@@ -76,7 +76,7 @@ function(hdoc, src, out, inline = length(out) && !is.na(out))
            else
                jnode[[1]]
 
-   if(inline || is(src, "AsIs")) 
+   if(inline || is(src, "AsIs")) #XXXX looks wrong.
       addChildren(jnode, paste(readLines(src), collapse = "\n"))
    else
       xmlAttrs(jnode) = c(src = src)

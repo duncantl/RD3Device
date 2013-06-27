@@ -23,7 +23,7 @@ function(code, str, asCode = FALSE)
   if(n == 0)
      return(NULL)
   
-  if(asValue)
+  if(asCode)
     if(n == 1) code[[i]] else code[i]
   else
     i

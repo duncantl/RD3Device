@@ -4,27 +4,16 @@
 <items>
 
 <item>
+A function for creating an interactive version of
+a plot that shows the sequence of calls
+that led to each object in the display.
+</item>
+
+<item>
 If we give the device an HTML page and there are multiple
 div's with ids and no content, cycle through these
 when we open a new page.
 Similarly, if given a vector for div, go through those.
-</item>
-
-<item status="done">
-image() function not working.
-Grid lines appearing when shouldn't.
-Rectangles are not in correct locations.
-Simpler example [ in place].
-<br/>
-Is the dimension of the device being set correctly in the C code for R,
-i.e. does R's graphics engine know the correct dimensions.
-<br/>
-rect() is passed  x0, y0, x1, y1, not width and height!
-</item>
-
-<item status="done">
-Map colors to RGB for D3.
-Map to RGB rather than names.
 </item>
 
 <item>
@@ -62,9 +51,26 @@ Specify in CSS or in R code that pass these on to D3.
 
 
 <item status="done">
+Map colors to RGB for D3.
+Map to RGB rather than names.
+</item>
+
+<item status="done">
 Rotate text. Where is the rotation specified - as a parameter of the text() method.
 Use
 text.attr("transform", function(d) "rotate(90)")
+</item>
+
+<item status="done">
+image() function not working.
+Grid lines appearing when shouldn't.
+Rectangles are not in correct locations.
+Simpler example [ in place].
+<br/>
+Is the dimension of the device being set correctly in the C code for R,
+i.e. does R's graphics engine know the correct dimensions.
+<br/>
+rect() is passed  x0, y0, x1, y1, not width and height!
 </item>
 
 </items>
