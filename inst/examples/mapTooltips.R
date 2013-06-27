@@ -1,6 +1,7 @@
-source("d3Dev.R")
+#source("d3Dev.R")
+library(RD3Device)
 library(maps)
-dev = d3Device(file = "../../foo.js")
+dev = d3Device()# file = "../../foo.js")
 # need fill to get the names in m and the polygons to return correctly
 m = map('county', 'california', fill = TRUE, col = "white")
 dev.off()
@@ -26,4 +27,5 @@ code[i] = mapply(function(x, id)
                    c(x, sprintf('el.on("click", function() { alert("%s");});', id)),
                  code[i], m$names, SIMPLIFY = FALSE)
 
-cat(unlist(code), file = "../../foo.js", sep = "\n")
+addToHTMLTemplate(code, "mapTooltips.html")
+#cat(unlist(code), file = "../../foo.js", sep = "\n")

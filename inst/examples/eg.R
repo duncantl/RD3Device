@@ -1,19 +1,19 @@
-source("d3Dev.R")
-dev = d3Device(file = "../../foo.js")
+library(RD3Device)
+dev = d3Device()  #file = "../../foo.js")
 plot(1:10, cex = 2, main = "A title")
 abline(v = 5, col = "red")
 abline(h = 5, col = "blue")
 dev.off()
 
 
-source("d3Dev.R")
+
 library(maps)
 dev = d3Device(file = "../../foo.js")
 map('county', 'california')
 dev.off()
 
 
-source("d3Dev.R")
+
 library(maps)
 dev = d3Device(file = "../../foo.js")
 map('county', 'california', fill = TRUE, col = c("red", "blue"))
@@ -23,7 +23,7 @@ hdoc = addToHTMLTemplate(dev$getCode(), html = "../inst/template/template.html")
 
 
 # contour example
-source("d3Dev.R")
+
 dev = d3Device(file = "../../foo.js")
      line.list <- contourLines(x, y, volcano)
      plot(x = 0, y = 0, type = "n", xlim = rx, ylim = ry, xlab = "", ylab = "")

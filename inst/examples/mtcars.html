@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script><script>
+function makePlot(d3) {
+
+    this.rectangles = [];
+    this.lines = [];
+    this.circles = [];
+    this.polygons = [];
+    this.polylines = [];
+    this.texts = [];
+
+    this.d3Plot = d3;
+  
+    return this;
+}
+</script>
+</head>
+<body>
+    <div id="svg"></div>
+<script>var svg = d3.select("#svg")
+	.append("svg").attr("width", 800).attr("height", 600);
+
+svg.style("stroke", "black").style("stroke-width", 1);
+
+var _svg = new makePlot(svg);
+
+var el;
+
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 263.620561).attr("cy", 317.254071).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Mazda RX4");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 307.862467).attr("cy", 317.254071).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Mazda RX4 Wag");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 211.571261).attr("cy", 281.769438).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Datsun 710");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 366.851674).attr("cy", 309.368597).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Hornet 4 Drive");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 405.888650).attr("cy", 362.595548).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Hornet Sportabout");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 409.358603).attr("cy", 374.423759).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Valiant");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 428.443347).attr("cy", 449.335763).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Duster 360");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 362.514233).attr("cy", 250.227541).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Merc 240D");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 355.574326).attr("cy", 281.769438).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Merc 230");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 405.888650).attr("cy", 352.738705).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Merc 280");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 405.888650).attr("cy", 380.337864).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Merc 280C");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 515.192181).attr("cy", 407.937024).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Merc 450SE");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 456.202974).attr("cy", 390.194707).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Merc 450SL");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 464.877857).attr("cy", 431.593446).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Merc 450SLC");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 719.919430).attr("cy", 526.219136).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Cadillac Fleetwood");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 750.108025).attr("cy", 526.219136).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Lincoln Continental");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 736.401709).attr("cy", 441.450289).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Chrysler Imperial");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 190.751540).attr("cy", 92.518059).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Fiat 128");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 89.255404).attr("cy", 131.945429).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Honda Civic");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 127.424891).attr("cy", 62.947531).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Toyota Corolla");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 236.728423).attr("cy", 307.397229).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Toyota Corona");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 419.768463).attr("cy", 425.679341).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Dodge Challenger");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 405.021161).attr("cy", 431.593446).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("AMC Javelin");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 475.287717).attr("cy", 469.049448).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Camaro Z28");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 476.155206).attr("cy", 352.738705).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Pontiac Firebird");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 144.774658).attr("cy", 193.057854).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Fiat X1-9");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 180.341680).attr("cy", 218.685645).attr("fill", "none").attr("stroke", "rgb(0, 0, 255)");
+_svg.circles.push(el);
+el.append("svg:title").text("Porsche 914-2");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 71.558642).attr("cy", 131.945429).attr("fill", "none").attr("stroke", "rgb(0, 0, 255)");
+_svg.circles.push(el);
+el.append("svg:title").text("Lotus Europa");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 359.044279).attr("cy", 419.765235).attr("fill", "none").attr("stroke", "rgb(0, 0, 255)");
+_svg.circles.push(el);
+el.append("svg:title").text("Ford Pantera L");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 289.645212).attr("cy", 342.881862).attr("fill", "none").attr("stroke", "rgb(0, 0, 255)");
+_svg.circles.push(el);
+el.append("svg:title").text("Ferrari Dino");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 428.443347).attr("cy", 435.536183).attr("fill", "none").attr("stroke", "rgb(0, 0, 255)");
+_svg.circles.push(el);
+el.append("svg:title").text("Maserati Bora");
+el = svg.append("circle").attr("r", 4.062500).attr("cx", 291.380188).attr("cy", 309.368597).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)");
+_svg.circles.push(el);
+el.append("svg:title").text("Volvo 142E");
+el = svg.append("line").attr("x1", 156.052007).attr("y1", 544.750000).attr("x2", 676.545013).attr("y2", 544.750000).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 156.052007).attr("y1", 544.750000).attr("x2", 156.052007).attr("y2", 550.166667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 329.549675).attr("y1", 544.750000).attr("x2", 329.549675).attr("y2", 550.166667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 503.047344).attr("y1", 544.750000).attr("x2", 503.047344).attr("y2", 550.166667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 676.545013).attr("y1", 544.750000).attr("x2", 676.545013).attr("y2", 550.166667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("text").attr("x", 151.052007).attr("y", 566.416667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("2");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 324.549675).attr("y", 566.416667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("3");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 498.047344).attr("y", 566.416667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("4");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 671.545013).attr("y", 566.416667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("5");
+_svg.texts.push(el);
+el = svg.append("line").attr("x1", 44.416667).attr("y1", 534.104610).attr("x2", 44.416667).attr("y2", 139.830904).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 44.416667).attr("y1", 534.104610).attr("x2", 39.000000).attr("y2", 534.104610).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 44.416667).attr("y1", 435.536183).attr("x2", 39.000000).attr("y2", 435.536183).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 44.416667).attr("y1", 336.967757).attr("x2", 39.000000).attr("y2", 336.967757).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 44.416667).attr("y1", 238.399330).attr("x2", 39.000000).attr("y2", 238.399330).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("line").attr("x1", 44.416667).attr("y1", 139.830904).attr("x2", 39.000000).attr("y2", 139.830904).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el = svg.append("text").attr("x", 33.583333).attr("y", 544.104610).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("10").attr("transform", function(d) { return "rotate(270.000000 33.583333,544.104610)" } );
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 33.583333).attr("y", 445.536183).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("15").attr("transform", function(d) { return "rotate(270.000000 33.583333,445.536183)" } );
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 33.583333).attr("y", 346.967757).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("20").attr("transform", function(d) { return "rotate(270.000000 33.583333,346.967757)" } );
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 33.583333).attr("y", 248.399330).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("25").attr("transform", function(d) { return "rotate(270.000000 33.583333,248.399330)" } );
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 33.583333).attr("y", 149.830904).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("30").attr("transform", function(d) { return "rotate(270.000000 33.583333,149.830904)" } );
+_svg.texts.push(el);
+var polylineFunction1 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData1 = [
+ {
+ "x": 44.417,
+"y": 544.75 
+},
+{
+ "x": 777.25,
+"y": 544.75 
+},
+{
+ "x": 777.25,
+"y": 44.417 
+},
+{
+ "x": 44.417,
+"y": 44.417 
+},
+{
+ "x": 44.417,
+"y": 544.75 
+} 
+];
+el = svg.append("path").attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction1(polylineData1));
+_svg.polylines.push(el);
+el = svg.append("text").attr("x", 380.833333).attr("y", 588.083333).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("Weight");
+_svg.texts.push(el);
+el.append("svg:title").text("pounds/1000");
+el = svg.append("text").attr("x", 11.916667).attr("y", 374.583333).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("Miles per gallon").attr("transform", function(d) { return "rotate(270.000000 11.916667,374.583333)" } );
+_svg.texts.push(el);
+el.append("svg:title").text("Miles/ US gallon");
+var polylineFunction2 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData2 = [
+ {
+ "x": 754.75,
+"y": 44.417 
+},
+{
+ "x": 754.75,
+"y":  87.75 
+},
+{
+ "x": 777.25,
+"y":  87.75 
+},
+{
+ "x": 777.25,
+"y": 44.417 
+},
+{
+ "x": 754.75,
+"y": 44.417 
+} 
+];
+el = svg.append("path").attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction2(polylineData2));
+_svg.polylines.push(el);
+el = svg.append("text").attr("x", 754.750000).attr("y", 55.250000).attr("fill", "none").attr("stroke", "rgb(255, 0, 0)").text("o");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 754.750000).attr("y", 66.083333).attr("fill", "none").attr("stroke", "rgb(0, 255, 0)").text("o");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 754.750000).attr("y", 76.916667).attr("fill", "none").attr("stroke", "rgb(0, 0, 255)").text("o");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 764.750000).attr("y", 55.250000).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("3");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 764.750000).attr("y", 66.083333).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("4");
+_svg.texts.push(el);
+el = svg.append("text").attr("x", 764.750000).attr("y", 76.916667).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)").text("5");
+_svg.texts.push(el);
+el = svg.append("line").attr("x1", 44.416667).attr("y1", 139.140337).attr("x2", 712.344199).attr("y2", 544.750000).attr("fill", "none").attr("stroke", "rgb(0, 0, 0)");
+_svg.lines.push(el);
+el.append("svg:title").text("intercept = 37.285, slope = -5.344");</script>
+</body>
+</html>

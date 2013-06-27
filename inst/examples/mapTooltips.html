@@ -1,0 +1,7924 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script><script>
+function makePlot(d3) {
+
+    this.rectangles = [];
+    this.lines = [];
+    this.circles = [];
+    this.polygons = [];
+    this.polylines = [];
+    this.texts = [];
+
+    this.d3Plot = d3;
+  
+    return this;
+}
+</script>
+</head>
+<body>
+    <div id="svg"></div>
+<script>var svg = d3.select("#svg")
+	.append("svg").attr("width", 800).attr("height", 600);
+
+svg.style("stroke", "black").style("stroke-width", 1);
+
+var _svg = new makePlot(svg);
+
+var el;
+
+var polylineFunction1 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData1 = [
+ {
+ "x": 306.29,
+"y": 289.25 
+},
+{
+ "x": 289.12,
+"y": 289.25 
+},
+{
+ "x": 287.43,
+"y": 290.47 
+},
+{
+ "x": 286.22,
+"y": 288.65 
+},
+{
+ "x": 281.14,
+"y": 285.93 
+},
+{
+ "x": 278.24,
+"y": 277.75 
+},
+{
+ "x": 272.68,
+"y": 272.91 
+},
+{
+ "x": 272.92,
+"y": 270.79 
+},
+{
+ "x": 272.68,
+"y": 269.88 
+},
+{
+ "x": 272.68,
+"y": 267.16 
+},
+{
+ "x": 275.82,
+"y": 268.97 
+},
+{
+ "x": 276.54,
+"y":  271.4 
+},
+{
+ "x": 278.72,
+"y":  271.4 
+},
+{
+ "x":  279.2,
+"y": 272.91 
+},
+{
+ "x": 282.35,
+"y": 272.91 
+},
+{
+ "x": 284.77,
+"y": 274.42 
+},
+{
+ "x": 285.01,
+"y": 277.45 
+},
+{
+ "x": 303.15,
+"y":  271.7 
+},
+{
+ "x": 303.15,
+"y": 286.23 
+},
+{
+ "x": 305.32,
+"y": 286.83 
+},
+{
+ "x": 306.29,
+"y": 289.25 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction1(polylineData1));
+_svg.polygons.push(el);
+el.append("svg:title").text("alameda");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("alameda");});
+var polylineFunction2 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData2 = [
+ {
+ "x": 365.54,
+"y": 224.48 
+},
+{
+ "x": 370.62,
+"y": 220.85 
+},
+{
+ "x": 372.55,
+"y": 216.91 
+},
+{
+ "x": 373.52,
+"y":  215.7 
+},
+{
+ "x": 374.25,
+"y": 213.89 
+},
+{
+ "x": 386.82,
+"y": 225.08 
+},
+{
+ "x": 385.13,
+"y": 228.11 
+},
+{
+ "x": 385.37,
+"y": 231.14 
+},
+{
+ "x": 387.79,
+"y": 233.56 
+},
+{
+ "x": 388.27,
+"y": 236.28 
+},
+{
+ "x":  387.3,
+"y": 238.71 
+},
+{
+ "x": 387.79,
+"y": 239.92 
+},
+{
+ "x": 386.34,
+"y": 241.13 
+},
+{
+ "x": 385.85,
+"y": 240.22 
+},
+{
+ "x": 384.89,
+"y": 240.82 
+},
+{
+ "x": 385.13,
+"y": 242.94 
+},
+{
+ "x": 383.68,
+"y": 244.46 
+},
+{
+ "x": 381.26,
+"y": 242.94 
+},
+{
+ "x": 380.53,
+"y": 240.22 
+},
+{
+ "x": 376.18,
+"y": 240.82 
+},
+{
+ "x": 374.49,
+"y": 242.94 
+},
+{
+ "x": 365.54,
+"y":  237.8 
+},
+{
+ "x": 365.54,
+"y": 224.48 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction2(polylineData2));
+_svg.polygons.push(el);
+el.append("svg:title").text("alpine");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("alpine");});
+var polylineFunction3 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData3 = [
+ {
+ "x": 365.54,
+"y": 224.48 
+},
+{
+ "x": 365.78,
+"y": 234.47 
+},
+{
+ "x": 350.06,
+"y": 237.19 
+},
+{
+ "x": 349.09,
+"y":  238.4 
+},
+{
+ "x":  347.4,
+"y":  238.1 
+},
+{
+ "x":  331.2,
+"y":  249.6 
+},
+{
+ "x": 327.33,
+"y": 250.21 
+},
+{
+ "x": 325.64,
+"y": 234.77 
+},
+{
+ "x": 326.85,
+"y": 234.77 
+},
+{
+ "x": 334.34,
+"y": 232.35 
+},
+{
+ "x":  344.5,
+"y": 235.07 
+},
+{
+ "x": 353.69,
+"y": 233.26 
+},
+{
+ "x": 358.77,
+"y": 230.53 
+},
+{
+ "x": 359.25,
+"y": 229.02 
+},
+{
+ "x": 361.67,
+"y": 228.41 
+},
+{
+ "x": 364.57,
+"y": 224.48 
+},
+{
+ "x": 365.54,
+"y": 224.48 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction3(polylineData3));
+_svg.polygons.push(el);
+el.append("svg:title").text("amador");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("amador");});
+var polylineFunction4 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData4 = [
+ {
+ "x": 300.24,
+"y":  192.7 
+},
+{
+ "x": 288.15,
+"y": 193.61 
+},
+{
+ "x": 290.09,
+"y": 184.22 
+},
+{
+ "x":  289.6,
+"y":  182.1 
+},
+{
+ "x": 290.57,
+"y": 180.59 
+},
+{
+ "x": 285.01,
+"y":  181.2 
+},
+{
+ "x":  283.8,
+"y": 179.38 
+},
+{
+ "x": 284.53,
+"y": 175.75 
+},
+{
+ "x": 285.49,
+"y": 175.14 
+},
+{
+ "x": 284.53,
+"y": 173.93 
+},
+{
+ "x": 286.94,
+"y": 173.63 
+},
+{
+ "x":  286.7,
+"y": 171.21 
+},
+{
+ "x": 283.07,
+"y": 168.18 
+},
+{
+ "x": 283.32,
+"y": 167.27 
+},
+{
+ "x": 281.86,
+"y": 166.67 
+},
+{
+ "x": 282.11,
+"y": 162.13 
+},
+{
+ "x": 292.51,
+"y": 161.82 
+},
+{
+ "x": 295.65,
+"y": 160.61 
+},
+{
+ "x": 295.17,
+"y":  159.1 
+},
+{
+ "x": 296.86,
+"y": 156.98 
+},
+{
+ "x": 299.28,
+"y": 156.98 
+},
+{
+ "x": 299.76,
+"y": 153.95 
+},
+{
+ "x": 301.45,
+"y": 153.35 
+},
+{
+ "x": 301.21,
+"y": 150.93 
+},
+{
+ "x": 307.02,
+"y": 148.81 
+},
+{
+ "x": 307.26,
+"y": 146.99 
+},
+{
+ "x": 308.95,
+"y":  147.6 
+},
+{
+ "x": 309.19,
+"y": 149.41 
+},
+{
+ "x": 310.88,
+"y": 150.93 
+},
+{
+ "x": 308.95,
+"y": 153.35 
+},
+{
+ "x": 308.71,
+"y": 160.01 
+},
+{
+ "x": 307.98,
+"y": 160.61 
+},
+{
+ "x": 316.93,
+"y":  170.6 
+},
+{
+ "x": 317.17,
+"y": 172.11 
+},
+{
+ "x": 324.19,
+"y": 176.96 
+},
+{
+ "x": 322.49,
+"y": 179.38 
+},
+{
+ "x": 321.04,
+"y": 179.68 
+},
+{
+ "x": 320.32,
+"y":  181.5 
+},
+{
+ "x": 316.93,
+"y":  181.2 
+},
+{
+ "x": 316.69,
+"y":  182.1 
+},
+{
+ "x":    315,
+"y":  181.8 
+},
+{
+ "x": 312.09,
+"y": 185.13 
+},
+{
+ "x": 310.64,
+"y": 189.97 
+},
+{
+ "x": 303.63,
+"y": 193.61 
+},
+{
+ "x": 300.24,
+"y":  192.7 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction4(polylineData4));
+_svg.polygons.push(el);
+el.append("svg:title").text("butte");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("butte");});
+var polylineFunction5 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData5 = [
+ {
+ "x": 365.78,
+"y": 234.47 
+},
+{
+ "x": 365.54,
+"y":  237.8 
+},
+{
+ "x": 366.51,
+"y":  238.4 
+},
+{
+ "x": 358.28,
+"y": 245.97 
+},
+{
+ "x": 347.64,
+"y": 262.32 
+},
+{
+ "x": 346.68,
+"y": 262.01 
+},
+{
+ "x": 345.95,
+"y": 263.53 
+},
+{
+ "x": 346.92,
+"y": 264.13 
+},
+{
+ "x": 341.36,
+"y": 270.79 
+},
+{
+ "x": 329.99,
+"y": 258.08 
+},
+{
+ "x": 329.26,
+"y": 256.87 
+},
+{
+ "x": 327.33,
+"y": 250.21 
+},
+{
+ "x":  331.2,
+"y":  249.6 
+},
+{
+ "x":  347.4,
+"y":  238.1 
+},
+{
+ "x": 349.09,
+"y":  238.4 
+},
+{
+ "x": 350.06,
+"y": 237.19 
+},
+{
+ "x": 365.78,
+"y": 234.47 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction5(polylineData5));
+_svg.polygons.push(el);
+el.append("svg:title").text("calaveras");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("calaveras");});
+var polylineFunction6 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData6 = [
+ {
+ "x": 291.78,
+"y": 212.37 
+},
+{
+ "x": 267.35,
+"y": 212.67 
+},
+{
+ "x": 266.39,
+"y": 209.35 
+},
+{
+ "x": 263.49,
+"y": 206.62 
+},
+{
+ "x": 263.73,
+"y":  204.2 
+},
+{
+ "x": 262.76,
+"y": 202.69 
+},
+{
+ "x": 263.97,
+"y": 201.78 
+},
+{
+ "x": 263.97,
+"y": 199.66 
+},
+{
+ "x": 262.52,
+"y": 197.84 
+},
+{
+ "x": 258.89,
+"y": 198.15 
+},
+{
+ "x": 256.47,
+"y": 197.84 
+},
+{
+ "x": 255.02,
+"y": 195.42 
+},
+{
+ "x": 252.12,
+"y": 193.61 
+},
+{
+ "x": 252.36,
+"y": 189.37 
+},
+{
+ "x": 250.18,
+"y": 188.76 
+},
+{
+ "x": 251.39,
+"y": 188.46 
+},
+{
+ "x": 278.24,
+"y": 188.46 
+},
+{
+ "x": 278.24,
+"y": 187.25 
+},
+{
+ "x":  283.8,
+"y": 187.25 
+},
+{
+ "x":  283.8,
+"y": 188.46 
+},
+{
+ "x": 289.12,
+"y": 188.76 
+},
+{
+ "x": 287.43,
+"y": 194.21 
+},
+{
+ "x":  286.7,
+"y": 199.96 
+},
+{
+ "x": 287.43,
+"y": 202.69 
+},
+{
+ "x": 291.05,
+"y": 205.71 
+},
+{
+ "x": 293.23,
+"y": 209.35 
+},
+{
+ "x": 291.54,
+"y": 210.56 
+},
+{
+ "x": 291.78,
+"y": 212.37 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction6(polylineData6));
+_svg.polygons.push(el);
+el.append("svg:title").text("colusa");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("colusa");});
+var polylineFunction7 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData7 = [
+ {
+ "x": 302.42,
+"y": 256.87 
+},
+{
+ "x": 301.69,
+"y": 259.29 
+},
+{
+ "x":  302.9,
+"y":  260.5 
+},
+{
+ "x": 301.69,
+"y": 261.71 
+},
+{
+ "x": 301.94,
+"y": 263.83 
+},
+{
+ "x": 303.15,
+"y": 265.04 
+},
+{
+ "x": 302.18,
+"y": 268.97 
+},
+{
+ "x": 303.63,
+"y": 270.19 
+},
+{
+ "x": 303.15,
+"y":  271.7 
+},
+{
+ "x": 285.01,
+"y": 277.45 
+},
+{
+ "x": 284.77,
+"y": 274.42 
+},
+{
+ "x": 282.35,
+"y": 272.91 
+},
+{
+ "x":  279.2,
+"y": 272.91 
+},
+{
+ "x": 278.72,
+"y":  271.4 
+},
+{
+ "x": 276.54,
+"y":  271.4 
+},
+{
+ "x": 275.82,
+"y": 268.97 
+},
+{
+ "x": 269.05,
+"y": 265.34 
+},
+{
+ "x": 268.81,
+"y": 263.53 
+},
+{
+ "x": 269.53,
+"y": 262.32 
+},
+{
+ "x": 270.01,
+"y":  260.5 
+},
+{
+ "x": 271.95,
+"y":  260.5 
+},
+{
+ "x": 275.09,
+"y": 258.68 
+},
+{
+ "x": 278.96,
+"y":  260.5 
+},
+{
+ "x": 280.41,
+"y": 258.99 
+},
+{
+ "x": 286.94,
+"y": 258.99 
+},
+{
+ "x": 290.57,
+"y": 258.38 
+},
+{
+ "x": 292.99,
+"y":  260.8 
+},
+{
+ "x": 296.62,
+"y":  260.5 
+},
+{
+ "x": 297.83,
+"y": 256.87 
+},
+{
+ "x": 302.42,
+"y": 256.87 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction7(polylineData7));
+_svg.polygons.push(el);
+el.append("svg:title").text("contra costa");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("contra costa");});
+var polylineFunction8 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData8 = [
+ {
+ "x": 213.18,
+"y": 82.822 
+},
+{
+ "x": 208.59,
+"y": 82.822 
+},
+{
+ "x": 208.59,
+"y": 78.584 
+},
+{
+ "x": 199.64,
+"y": 78.281 
+},
+{
+ "x": 198.19,
+"y": 78.887 
+},
+{
+ "x": 196.74,
+"y": 74.347 
+},
+{
+ "x": 198.19,
+"y": 74.347 
+},
+{
+ "x": 195.77,
+"y": 70.412 
+},
+{
+ "x": 193.35,
+"y": 63.147 
+},
+{
+ "x": 190.45,
+"y": 60.726 
+},
+{
+ "x": 190.45,
+"y": 56.186 
+},
+{
+ "x": 192.14,
+"y": 50.434 
+},
+{
+ "x": 206.41,
+"y": 50.132 
+},
+{
+ "x": 218.99,
+"y": 50.132 
+},
+{
+ "x":  218.5,
+"y": 53.158 
+},
+{
+ "x": 215.36,
+"y": 56.186 
+},
+{
+ "x": 213.91,
+"y": 56.186 
+},
+{
+ "x":  212.7,
+"y": 59.212 
+},
+{
+ "x": 211.25,
+"y": 59.212 
+},
+{
+ "x":  212.7,
+"y": 60.726 
+},
+{
+ "x": 211.73,
+"y":  63.45 
+},
+{
+ "x": 213.43,
+"y": 64.358 
+},
+{
+ "x": 210.77,
+"y": 71.622 
+},
+{
+ "x": 212.22,
+"y": 71.622 
+},
+{
+ "x": 212.22,
+"y": 74.347 
+},
+{
+ "x": 214.15,
+"y": 75.255 
+},
+{
+ "x":  212.7,
+"y": 77.676 
+},
+{
+ "x": 213.18,
+"y": 82.822 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction8(polylineData8));
+_svg.polygons.push(el);
+el.append("svg:title").text("del norte");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("del norte");});
+var polylineFunction9 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData9 = [
+ {
+ "x": 320.07,
+"y": 223.87 
+},
+{
+ "x": 324.67,
+"y": 213.89 
+},
+{
+ "x": 331.68,
+"y": 211.77 
+},
+{
+ "x": 334.34,
+"y": 208.74 
+},
+{
+ "x": 337.24,
+"y": 208.74 
+},
+{
+ "x":  344.5,
+"y": 213.58 
+},
+{
+ "x": 349.09,
+"y": 209.95 
+},
+{
+ "x": 349.82,
+"y": 207.53 
+},
+{
+ "x": 358.28,
+"y": 207.23 
+},
+{
+ "x": 361.19,
+"y": 206.92 
+},
+{
+ "x": 362.88,
+"y": 205.11 
+},
+{
+ "x": 368.44,
+"y": 205.71 
+},
+{
+ "x": 368.92,
+"y": 209.65 
+},
+{
+ "x": 374.25,
+"y": 213.89 
+},
+{
+ "x": 373.52,
+"y": 216.61 
+},
+{
+ "x": 372.55,
+"y": 216.91 
+},
+{
+ "x": 370.62,
+"y": 220.85 
+},
+{
+ "x": 364.57,
+"y": 224.48 
+},
+{
+ "x": 361.67,
+"y": 228.41 
+},
+{
+ "x": 359.25,
+"y": 229.02 
+},
+{
+ "x": 358.77,
+"y": 230.53 
+},
+{
+ "x": 356.59,
+"y": 231.74 
+},
+{
+ "x":  344.5,
+"y": 235.07 
+},
+{
+ "x": 334.34,
+"y": 232.35 
+},
+{
+ "x": 329.99,
+"y": 234.47 
+},
+{
+ "x": 325.64,
+"y": 234.77 
+},
+{
+ "x": 321.04,
+"y": 223.87 
+},
+{
+ "x": 320.32,
+"y": 224.78 
+},
+{
+ "x": 320.07,
+"y": 223.87 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction9(polylineData9));
+_svg.polygons.push(el);
+el.append("svg:title").text("el dorado");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("el dorado");});
+var polylineFunction10 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData10 = [
+ {
+ "x":  339.9,
+"y": 353.12 
+},
+{
+ "x": 340.63,
+"y": 351.31 
+},
+{
+ "x": 344.02,
+"y":  350.4 
+},
+{
+ "x": 344.02,
+"y": 342.53 
+},
+{
+ "x": 330.71,
+"y":  328.6 
+},
+{
+ "x": 346.19,
+"y": 312.86 
+},
+{
+ "x": 349.58,
+"y": 319.22 
+},
+{
+ "x":  350.3,
+"y": 323.16 
+},
+{
+ "x": 352.96,
+"y": 326.18 
+},
+{
+ "x": 357.07,
+"y":  327.7 
+},
+{
+ "x": 378.11,
+"y": 321.64 
+},
+{
+ "x": 380.29,
+"y": 315.59 
+},
+{
+ "x": 383.19,
+"y": 313.77 
+},
+{
+ "x": 383.19,
+"y": 312.56 
+},
+{
+ "x":  384.4,
+"y": 313.77 
+},
+{
+ "x": 385.37,
+"y": 311.05 
+},
+{
+ "x": 387.06,
+"y": 311.05 
+},
+{
+ "x": 388.27,
+"y": 309.53 
+},
+{
+ "x": 387.06,
+"y": 307.11 
+},
+{
+ "x": 390.45,
+"y": 307.42 
+},
+{
+ "x": 391.17,
+"y": 308.63 
+},
+{
+ "x": 393.83,
+"y":  305.6 
+},
+{
+ "x":  394.8,
+"y": 306.51 
+},
+{
+ "x": 396.74,
+"y": 304.39 
+},
+{
+ "x": 397.46,
+"y": 297.43 
+},
+{
+ "x": 410.28,
+"y": 284.11 
+},
+{
+ "x": 413.42,
+"y": 285.02 
+},
+{
+ "x": 417.29,
+"y": 289.25 
+},
+{
+ "x": 419.95,
+"y": 288.65 
+},
+{
+ "x": 420.68,
+"y": 289.56 
+},
+{
+ "x":  421.4,
+"y": 291.68 
+},
+{
+ "x": 420.44,
+"y": 292.28 
+},
+{
+ "x": 421.16,
+"y": 295.01 
+},
+{
+ "x": 420.44,
+"y": 296.22 
+},
+{
+ "x": 422.37,
+"y": 297.73 
+},
+{
+ "x": 423.58,
+"y": 297.43 
+},
+{
+ "x":    426,
+"y": 300.45 
+},
+{
+ "x": 424.79,
+"y": 301.97 
+},
+{
+ "x": 425.76,
+"y": 306.81 
+},
+{
+ "x":  434.7,
+"y": 311.05 
+},
+{
+ "x": 438.33,
+"y": 320.43 
+},
+{
+ "x": 437.85,
+"y": 322.85 
+},
+{
+ "x": 436.64,
+"y": 323.76 
+},
+{
+ "x": 438.09,
+"y":  327.7 
+},
+{
+ "x": 412.21,
+"y":  328.6 
+},
+{
+ "x": 412.21,
+"y": 332.84 
+},
+{
+ "x": 398.67,
+"y": 332.54 
+},
+{
+ "x": 398.43,
+"y": 337.38 
+},
+{
+ "x": 392.14,
+"y": 337.38 
+},
+{
+ "x": 383.68,
+"y": 345.25 
+},
+{
+ "x": 380.05,
+"y": 346.16 
+},
+{
+ "x": 370.86,
+"y": 346.77 
+},
+{
+ "x": 370.86,
+"y": 357.66 
+},
+{
+ "x": 356.11,
+"y":  372.8 
+},
+{
+ "x": 349.82,
+"y": 370.37 
+},
+{
+ "x": 350.54,
+"y": 369.77 
+},
+{
+ "x": 348.13,
+"y": 366.44 
+},
+{
+ "x": 346.43,
+"y": 366.74 
+},
+{
+ "x": 344.02,
+"y": 364.32 
+},
+{
+ "x": 343.53,
+"y": 362.81 
+},
+{
+ "x": 341.84,
+"y": 362.81 
+},
+{
+ "x": 340.15,
+"y": 359.48 
+},
+{
+ "x": 342.32,
+"y": 356.45 
+},
+{
+ "x":  339.9,
+"y": 355.24 
+},
+{
+ "x":  339.9,
+"y": 353.12 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction10(polylineData10));
+_svg.polygons.push(el);
+el.append("svg:title").text("fresno");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("fresno");});
+var polylineFunction11 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData11 = [
+ {
+ "x": 244.62,
+"y": 166.36 
+},
+{
+ "x": 283.32,
+"y": 167.27 
+},
+{
+ "x": 283.07,
+"y": 168.18 
+},
+{
+ "x":  286.7,
+"y": 171.21 
+},
+{
+ "x": 286.94,
+"y": 173.63 
+},
+{
+ "x": 284.53,
+"y": 173.93 
+},
+{
+ "x": 285.49,
+"y": 175.14 
+},
+{
+ "x": 284.53,
+"y": 175.75 
+},
+{
+ "x":  283.8,
+"y": 179.38 
+},
+{
+ "x": 285.01,
+"y":  181.2 
+},
+{
+ "x": 290.57,
+"y": 180.59 
+},
+{
+ "x":  289.6,
+"y":  182.1 
+},
+{
+ "x":  289.6,
+"y": 186.34 
+},
+{
+ "x": 289.12,
+"y": 188.76 
+},
+{
+ "x":  283.8,
+"y": 188.46 
+},
+{
+ "x":  283.8,
+"y": 187.25 
+},
+{
+ "x": 278.24,
+"y": 187.25 
+},
+{
+ "x": 278.24,
+"y": 188.46 
+},
+{
+ "x": 253.57,
+"y": 188.46 
+},
+{
+ "x":  254.3,
+"y": 185.43 
+},
+{
+ "x": 253.09,
+"y": 182.71 
+},
+{
+ "x": 252.84,
+"y": 178.17 
+},
+{
+ "x": 247.04,
+"y": 178.17 
+},
+{
+ "x": 246.32,
+"y":  170.9 
+},
+{
+ "x": 245.59,
+"y":  170.9 
+},
+{
+ "x": 245.59,
+"y": 168.48 
+},
+{
+ "x": 244.38,
+"y": 168.48 
+},
+{
+ "x": 244.62,
+"y": 166.36 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction11(polylineData11));
+_svg.polygons.push(el);
+el.append("svg:title").text("glenn");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("glenn");});
+var polylineFunction12 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData12 = [
+ {
+ "x": 224.31,
+"y": 93.416 
+},
+{
+ "x": 222.86,
+"y": 94.324 
+},
+{
+ "x": 222.86,
+"y": 97.654 
+},
+{
+ "x": 221.16,
+"y": 97.956 
+},
+{
+ "x": 224.07,
+"y": 100.68 
+},
+{
+ "x": 222.62,
+"y": 105.83 
+},
+{
+ "x": 220.68,
+"y": 107.94 
+},
+{
+ "x": 218.02,
+"y": 105.83 
+},
+{
+ "x": 215.36,
+"y": 107.94 
+},
+{
+ "x":  217.3,
+"y": 110.97 
+},
+{
+ "x":  217.3,
+"y": 116.12 
+},
+{
+ "x":  218.5,
+"y": 117.33 
+},
+{
+ "x": 218.99,
+"y": 155.77 
+},
+{
+ "x": 199.88,
+"y": 155.77 
+},
+{
+ "x": 196.74,
+"y": 151.53 
+},
+{
+ "x":  196.5,
+"y": 149.72 
+},
+{
+ "x": 185.13,
+"y": 140.64 
+},
+{
+ "x": 184.89,
+"y": 139.42 
+},
+{
+ "x": 185.86,
+"y":  136.7 
+},
+{
+ "x": 185.37,
+"y": 134.28 
+},
+{
+ "x": 183.68,
+"y": 132.46 
+},
+{
+ "x": 183.92,
+"y": 128.83 
+},
+{
+ "x": 196.01,
+"y": 101.29 
+},
+{
+ "x": 193.35,
+"y": 95.232 
+},
+{
+ "x": 194.32,
+"y": 92.205 
+},
+{
+ "x": 196.01,
+"y": 93.416 
+},
+{
+ "x": 196.01,
+"y": 88.573 
+},
+{
+ "x": 197.46,
+"y": 85.243 
+},
+{
+ "x": 198.19,
+"y": 79.492 
+},
+{
+ "x": 199.64,
+"y": 78.281 
+},
+{
+ "x": 208.59,
+"y": 78.584 
+},
+{
+ "x": 208.59,
+"y": 82.822 
+},
+{
+ "x": 221.16,
+"y":  83.73 
+},
+{
+ "x": 222.37,
+"y": 88.876 
+},
+{
+ "x": 224.31,
+"y": 93.416 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction12(polylineData12));
+_svg.polygons.push(el);
+el.append("svg:title").text("humboldt");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("humboldt");});
+var polylineFunction13 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData13 = [
+ {
+ "x": 592.86,
+"y": 503.25 
+},
+{
+ "x": 591.17,
+"y": 504.77 
+},
+{
+ "x": 591.65,
+"y": 507.19 
+},
+{
+ "x": 590.69,
+"y": 509.61 
+},
+{
+ "x": 592.86,
+"y": 512.03 
+},
+{
+ "x": 591.89,
+"y": 518.99 
+},
+{
+ "x": 592.38,
+"y": 521.72 
+},
+{
+ "x": 594.07,
+"y": 523.23 
+},
+{
+ "x": 599.15,
+"y": 523.84 
+},
+{
+ "x": 601.57,
+"y": 526.26 
+},
+{
+ "x": 601.81,
+"y": 532.62 
+},
+{
+ "x": 599.88,
+"y": 535.34 
+},
+{
+ "x": 598.67,
+"y": 538.67 
+},
+{
+ "x": 596.97,
+"y": 539.88 
+},
+{
+ "x": 533.13,
+"y": 545.93 
+},
+{
+ "x": 532.89,
+"y": 521.72 
+},
+{
+ "x": 533.85,
+"y": 521.72 
+},
+{
+ "x": 534.34,
+"y": 503.25 
+},
+{
+ "x": 592.86,
+"y": 503.25 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction13(polylineData13));
+_svg.polygons.push(el);
+el.append("svg:title").text("imperial");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("imperial");});
+var polylineFunction14 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData14 = [
+ {
+ "x": 541.84,
+"y": 367.35 
+},
+{
+ "x": 551.27,
+"y": 376.43 
+},
+{
+ "x":  468.8,
+"y": 378.85 
+},
+{
+ "x": 452.84,
+"y": 378.55 
+},
+{
+ "x": 452.84,
+"y": 375.52 
+},
+{
+ "x": 453.81,
+"y": 374.61 
+},
+{
+ "x": 453.57,
+"y": 370.98 
+},
+{
+ "x": 451.87,
+"y": 370.37 
+},
+{
+ "x":  452.6,
+"y": 368.56 
+},
+{
+ "x": 451.39,
+"y": 363.11 
+},
+{
+ "x": 450.42,
+"y":  362.5 
+},
+{
+ "x": 451.39,
+"y": 359.48 
+},
+{
+ "x": 449.21,
+"y": 356.75 
+},
+{
+ "x":    448,
+"y": 353.12 
+},
+{
+ "x": 448.97,
+"y": 349.19 
+},
+{
+ "x": 447.04,
+"y": 347.98 
+},
+{
+ "x": 447.04,
+"y": 344.65 
+},
+{
+ "x":  445.1,
+"y": 344.95 
+},
+{
+ "x": 442.93,
+"y": 342.53 
+},
+{
+ "x": 443.41,
+"y":  339.8 
+},
+{
+ "x": 441.23,
+"y": 337.68 
+},
+{
+ "x": 441.72,
+"y": 335.57 
+},
+{
+ "x": 440.27,
+"y": 335.26 
+},
+{
+ "x":  439.3,
+"y": 332.54 
+},
+{
+ "x": 437.36,
+"y": 331.33 
+},
+{
+ "x": 439.06,
+"y": 329.81 
+},
+{
+ "x": 438.09,
+"y":  327.7 
+},
+{
+ "x": 437.61,
+"y": 324.97 
+},
+{
+ "x": 436.64,
+"y": 323.76 
+},
+{
+ "x": 437.85,
+"y": 322.85 
+},
+{
+ "x": 438.33,
+"y": 320.43 
+},
+{
+ "x":  434.7,
+"y": 311.05 
+},
+{
+ "x": 425.76,
+"y": 306.81 
+},
+{
+ "x": 424.79,
+"y": 301.97 
+},
+{
+ "x":    426,
+"y": 300.45 
+},
+{
+ "x": 423.58,
+"y": 297.43 
+},
+{
+ "x": 422.37,
+"y": 297.73 
+},
+{
+ "x": 420.44,
+"y": 296.22 
+},
+{
+ "x": 421.16,
+"y": 295.01 
+},
+{
+ "x": 420.19,
+"y": 293.49 
+},
+{
+ "x":  421.4,
+"y": 291.68 
+},
+{
+ "x":  421.4,
+"y": 290.16 
+},
+{
+ "x": 459.61,
+"y": 289.56 
+},
+{
+ "x": 541.84,
+"y": 367.35 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction14(polylineData14));
+_svg.polygons.push(el);
+el.append("svg:title").text("inyo");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("inyo");});
+var polylineFunction15 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData15 = [
+ {
+ "x": 467.83,
+"y":    430 
+},
+{
+ "x": 413.66,
+"y":    430 
+},
+{
+ "x":  400.6,
+"y": 430.31 
+},
+{
+ "x":  400.6,
+"y": 428.49 
+},
+{
+ "x": 398.91,
+"y": 427.89 
+},
+{
+ "x": 398.91,
+"y": 426.67 
+},
+{
+ "x": 394.56,
+"y": 426.67 
+},
+{
+ "x": 394.32,
+"y": 425.77 
+},
+{
+ "x": 391.17,
+"y": 425.46 
+},
+{
+ "x": 391.17,
+"y": 417.29 
+},
+{
+ "x": 390.45,
+"y": 416.08 
+},
+{
+ "x": 387.79,
+"y": 415.48 
+},
+{
+ "x":  387.3,
+"y": 410.63 
+},
+{
+ "x": 383.19,
+"y": 410.93 
+},
+{
+ "x": 382.71,
+"y":    407 
+},
+{
+ "x": 377.15,
+"y": 406.39 
+},
+{
+ "x": 377.15,
+"y": 401.85 
+},
+{
+ "x":    374,
+"y": 401.85 
+},
+{
+ "x":    374,
+"y": 397.31 
+},
+{
+ "x": 368.92,
+"y": 397.31 
+},
+{
+ "x": 364.81,
+"y": 392.77 
+},
+{
+ "x": 364.81,
+"y": 388.23 
+},
+{
+ "x": 360.22,
+"y": 387.93 
+},
+{
+ "x": 360.22,
+"y": 379.46 
+},
+{
+ "x": 452.84,
+"y": 378.55 
+},
+{
+ "x":  468.8,
+"y": 378.85 
+},
+{
+ "x": 467.83,
+"y":    430 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction15(polylineData15));
+_svg.polygons.push(el);
+el.append("svg:title").text("kern");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("kern");});
+var polylineFunction16 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData16 = [
+ {
+ "x": 389.24,
+"y": 379.15 
+},
+{
+ "x": 360.22,
+"y": 379.46 
+},
+{
+ "x": 359.98,
+"y": 377.94 
+},
+{
+ "x": 358.04,
+"y": 376.73 
+},
+{
+ "x": 358.77,
+"y": 374.61 
+},
+{
+ "x": 357.32,
+"y":  372.8 
+},
+{
+ "x": 356.11,
+"y":  372.8 
+},
+{
+ "x": 370.86,
+"y": 357.66 
+},
+{
+ "x": 370.86,
+"y": 346.77 
+},
+{
+ "x": 380.05,
+"y": 346.16 
+},
+{
+ "x": 383.19,
+"y": 345.25 
+},
+{
+ "x":  387.3,
+"y": 341.92 
+},
+{
+ "x":    389,
+"y": 342.22 
+},
+{
+ "x": 389.24,
+"y": 346.46 
+},
+{
+ "x": 391.66,
+"y": 346.46 
+},
+{
+ "x": 391.42,
+"y": 353.73 
+},
+{
+ "x": 388.75,
+"y": 354.03 
+},
+{
+ "x": 389.24,
+"y": 379.15 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction16(polylineData16));
+_svg.polygons.push(el);
+el.append("svg:title").text("kings");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("kings");});
+var polylineFunction17 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData17 = [
+ {
+ "x": 267.35,
+"y": 212.67 
+},
+{
+ "x": 266.63,
+"y": 214.79 
+},
+{
+ "x":  267.6,
+"y": 216.31 
+},
+{
+ "x": 266.87,
+"y": 217.22 
+},
+{
+ "x": 267.84,
+"y": 219.03 
+},
+{
+ "x": 266.39,
+"y": 220.24 
+},
+{
+ "x": 266.87,
+"y": 221.76 
+},
+{
+ "x": 264.21,
+"y": 225.08 
+},
+{
+ "x": 257.92,
+"y":  226.9 
+},
+{
+ "x":  254.3,
+"y": 222.97 
+},
+{
+ "x":  252.6,
+"y": 219.33 
+},
+{
+ "x": 250.43,
+"y": 217.22 
+},
+{
+ "x": 245.59,
+"y": 213.58 
+},
+{
+ "x": 244.14,
+"y": 213.58 
+},
+{
+ "x": 242.45,
+"y": 209.04 
+},
+{
+ "x": 238.82,
+"y": 207.53 
+},
+{
+ "x": 238.82,
+"y": 205.71 
+},
+{
+ "x": 237.61,
+"y": 205.11 
+},
+{
+ "x": 237.37,
+"y": 203.29 
+},
+{
+ "x": 238.82,
+"y": 199.66 
+},
+{
+ "x": 241.72,
+"y": 197.24 
+},
+{
+ "x": 241.72,
+"y": 195.12 
+},
+{
+ "x": 238.09,
+"y": 186.34 
+},
+{
+ "x": 238.82,
+"y":  182.1 
+},
+{
+ "x":  246.8,
+"y": 180.59 
+},
+{
+ "x": 247.04,
+"y": 178.17 
+},
+{
+ "x": 252.84,
+"y": 178.17 
+},
+{
+ "x": 253.09,
+"y": 182.71 
+},
+{
+ "x":  254.3,
+"y": 185.43 
+},
+{
+ "x": 253.57,
+"y": 188.46 
+},
+{
+ "x": 250.18,
+"y": 188.76 
+},
+{
+ "x": 252.36,
+"y": 189.37 
+},
+{
+ "x": 252.12,
+"y": 193.61 
+},
+{
+ "x": 255.02,
+"y": 195.42 
+},
+{
+ "x": 256.47,
+"y": 197.84 
+},
+{
+ "x": 258.89,
+"y": 198.15 
+},
+{
+ "x": 262.52,
+"y": 197.84 
+},
+{
+ "x": 263.97,
+"y": 199.66 
+},
+{
+ "x": 263.97,
+"y": 201.78 
+},
+{
+ "x": 262.76,
+"y": 202.69 
+},
+{
+ "x": 263.73,
+"y":  204.2 
+},
+{
+ "x": 263.49,
+"y": 206.62 
+},
+{
+ "x": 266.39,
+"y": 209.35 
+},
+{
+ "x": 267.35,
+"y": 212.67 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction17(polylineData17));
+_svg.polygons.push(el);
+el.append("svg:title").text("lake");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("lake");});
+var polylineFunction18 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData18 = [
+ {
+ "x": 368.44,
+"y": 92.811 
+},
+{
+ "x": 368.44,
+"y": 172.11 
+},
+{
+ "x": 362.15,
+"y": 171.51 
+},
+{
+ "x": 361.91,
+"y":    170 
+},
+{
+ "x": 363.85,
+"y": 168.18 
+},
+{
+ "x": 363.85,
+"y": 160.31 
+},
+{
+ "x": 361.19,
+"y": 157.59 
+},
+{
+ "x": 357.07,
+"y": 149.72 
+},
+{
+ "x": 354.17,
+"y": 149.72 
+},
+{
+ "x":  344.5,
+"y": 140.94 
+},
+{
+ "x": 336.52,
+"y": 138.52 
+},
+{
+ "x": 331.44,
+"y": 143.06 
+},
+{
+ "x":  331.2,
+"y": 144.87 
+},
+{
+ "x": 329.75,
+"y": 145.48 
+},
+{
+ "x": 323.22,
+"y": 141.85 
+},
+{
+ "x": 323.46,
+"y": 131.55 
+},
+{
+ "x": 312.58,
+"y": 131.25 
+},
+{
+ "x": 312.09,
+"y": 92.811 
+},
+{
+ "x": 368.44,
+"y": 92.811 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction18(polylineData18));
+_svg.polygons.push(el);
+el.append("svg:title").text("lassen");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("lassen");});
+var polylineFunction19 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData19 = [
+ {
+ "x": 415.36,
+"y":    430 
+},
+{
+ "x": 467.83,
+"y":    430 
+},
+{
+ "x": 467.59,
+"y": 448.77 
+},
+{
+ "x": 468.08,
+"y": 459.06 
+},
+{
+ "x": 464.21,
+"y": 472.08 
+},
+{
+ "x":    463,
+"y": 471.77 
+},
+{
+ "x": 461.55,
+"y":  474.5 
+},
+{
+ "x": 462.03,
+"y": 476.32 
+},
+{
+ "x": 460.58,
+"y": 476.32 
+},
+{
+ "x": 454.29,
+"y": 476.62 
+},
+{
+ "x": 454.05,
+"y": 478.43 
+},
+{
+ "x": 449.21,
+"y": 483.58 
+},
+{
+ "x": 449.21,
+"y": 485.09 
+},
+{
+ "x": 445.83,
+"y": 484.19 
+},
+{
+ "x": 443.17,
+"y": 485.09 
+},
+{
+ "x": 442.68,
+"y": 487.21 
+},
+{
+ "x": 440.27,
+"y": 486.61 
+},
+{
+ "x": 436.64,
+"y": 484.79 
+},
+{
+ "x": 437.61,
+"y": 480.86 
+},
+{
+ "x": 433.98,
+"y": 472.68 
+},
+{
+ "x": 430.59,
+"y": 471.17 
+},
+{
+ "x": 422.37,
+"y": 471.17 
+},
+{
+ "x": 413.91,
+"y": 469.66 
+},
+{
+ "x": 412.94,
+"y": 467.54 
+},
+{
+ "x": 420.44,
+"y": 463.91 
+},
+{
+ "x": 425.03,
+"y": 463.91 
+},
+{
+ "x": 424.79,
+"y": 460.58 
+},
+{
+ "x": 426.48,
+"y": 460.27 
+},
+{
+ "x": 426.96,
+"y": 458.15 
+},
+{
+ "x": 415.36,
+"y":    430 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction19(polylineData19));
+_svg.polygons.push(el);
+el.append("svg:title").text("los angeles");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("los angeles");});
+var polylineFunction20 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData20 = [
+ {
+ "x": 398.43,
+"y": 273.82 
+},
+{
+ "x": 401.09,
+"y": 276.54 
+},
+{
+ "x": 406.41,
+"y": 276.24 
+},
+{
+ "x": 410.28,
+"y": 284.11 
+},
+{
+ "x": 397.46,
+"y": 297.43 
+},
+{
+ "x": 396.74,
+"y": 304.39 
+},
+{
+ "x":  394.8,
+"y": 306.51 
+},
+{
+ "x": 393.83,
+"y":  305.6 
+},
+{
+ "x": 391.17,
+"y": 308.63 
+},
+{
+ "x": 389.96,
+"y": 307.11 
+},
+{
+ "x": 388.75,
+"y": 307.42 
+},
+{
+ "x": 387.06,
+"y": 307.11 
+},
+{
+ "x": 388.27,
+"y": 309.53 
+},
+{
+ "x": 387.06,
+"y": 311.05 
+},
+{
+ "x": 385.37,
+"y": 311.05 
+},
+{
+ "x":  384.4,
+"y": 313.77 
+},
+{
+ "x": 383.19,
+"y": 312.56 
+},
+{
+ "x": 383.19,
+"y": 313.77 
+},
+{
+ "x": 380.29,
+"y": 315.59 
+},
+{
+ "x": 379.81,
+"y": 318.62 
+},
+{
+ "x": 378.11,
+"y": 321.64 
+},
+{
+ "x":  371.1,
+"y": 323.76 
+},
+{
+ "x": 357.07,
+"y":  327.7 
+},
+{
+ "x": 352.96,
+"y": 326.18 
+},
+{
+ "x":  350.3,
+"y": 323.16 
+},
+{
+ "x": 349.58,
+"y": 319.22 
+},
+{
+ "x": 346.19,
+"y": 312.86 
+},
+{
+ "x": 349.09,
+"y": 309.53 
+},
+{
+ "x": 354.17,
+"y": 308.02 
+},
+{
+ "x": 355.62,
+"y": 306.51 
+},
+{
+ "x": 363.85,
+"y": 306.51 
+},
+{
+ "x": 366.75,
+"y": 304.99 
+},
+{
+ "x": 379.08,
+"y": 292.89 
+},
+{
+ "x": 383.68,
+"y": 292.58 
+},
+{
+ "x": 383.68,
+"y": 290.47 
+},
+{
+ "x": 385.13,
+"y": 290.16 
+},
+{
+ "x": 385.13,
+"y": 288.65 
+},
+{
+ "x": 386.58,
+"y": 288.65 
+},
+{
+ "x": 386.58,
+"y": 285.32 
+},
+{
+ "x": 398.43,
+"y": 273.82 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction20(polylineData20));
+_svg.polygons.push(el);
+el.append("svg:title").text("madera");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("madera");});
+var polylineFunction21 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData21 = [
+ {
+ "x": 244.38,
+"y": 245.97 
+},
+{
+ "x": 246.32,
+"y": 245.37 
+},
+{
+ "x":  257.2,
+"y": 252.93 
+},
+{
+ "x": 259.62,
+"y": 252.33 
+},
+{
+ "x":    263,
+"y": 255.96 
+},
+{
+ "x": 264.69,
+"y": 255.35 
+},
+{
+ "x": 264.45,
+"y":  260.8 
+},
+{
+ "x": 266.15,
+"y": 262.62 
+},
+{
+ "x": 264.69,
+"y": 263.83 
+},
+{
+ "x": 267.11,
+"y": 268.07 
+},
+{
+ "x": 264.45,
+"y": 267.46 
+},
+{
+ "x": 264.94,
+"y": 270.49 
+},
+{
+ "x": 261.79,
+"y": 268.97 
+},
+{
+ "x": 261.07,
+"y": 268.07 
+},
+{
+ "x": 258.17,
+"y": 266.25 
+},
+{
+ "x": 256.47,
+"y": 266.25 
+},
+{
+ "x": 247.28,
+"y": 259.89 
+},
+{
+ "x":  246.8,
+"y": 258.08 
+},
+{
+ "x": 245.35,
+"y": 258.99 
+},
+{
+ "x": 244.38,
+"y": 261.41 
+},
+{
+ "x": 242.69,
+"y":  260.8 
+},
+{
+ "x": 244.62,
+"y": 254.45 
+},
+{
+ "x": 243.65,
+"y": 250.21 
+},
+{
+ "x": 244.62,
+"y": 249.91 
+},
+{
+ "x":  246.8,
+"y": 252.02 
+},
+{
+ "x": 247.28,
+"y": 251.42 
+},
+{
+ "x": 244.38,
+"y": 245.97 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction21(polylineData21));
+_svg.polygons.push(el);
+el.append("svg:title").text("marin");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("marin");});
+var polylineFunction22 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData22 = [
+ {
+ "x": 352.48,
+"y": 281.38 
+},
+{
+ "x": 355.14,
+"y": 280.17 
+},
+{
+ "x": 353.69,
+"y": 277.15 
+},
+{
+ "x": 354.66,
+"y": 275.94 
+},
+{
+ "x": 357.07,
+"y": 276.24 
+},
+{
+ "x": 361.43,
+"y": 273.21 
+},
+{
+ "x": 363.36,
+"y": 274.12 
+},
+{
+ "x":  365.3,
+"y":    272 
+},
+{
+ "x": 373.52,
+"y": 274.42 
+},
+{
+ "x": 377.63,
+"y": 274.12 
+},
+{
+ "x": 383.92,
+"y":  271.4 
+},
+{
+ "x": 384.64,
+"y": 268.97 
+},
+{
+ "x": 388.51,
+"y": 266.86 
+},
+{
+ "x": 396.25,
+"y": 271.09 
+},
+{
+ "x": 396.74,
+"y":  272.3 
+},
+{
+ "x": 398.43,
+"y": 273.82 
+},
+{
+ "x": 386.58,
+"y": 285.32 
+},
+{
+ "x": 386.58,
+"y": 288.65 
+},
+{
+ "x": 385.13,
+"y": 288.65 
+},
+{
+ "x": 385.13,
+"y": 290.16 
+},
+{
+ "x": 383.68,
+"y": 290.47 
+},
+{
+ "x": 383.68,
+"y": 292.58 
+},
+{
+ "x": 379.08,
+"y": 292.89 
+},
+{
+ "x": 366.75,
+"y": 304.99 
+},
+{
+ "x":  365.3,
+"y": 303.18 
+},
+{
+ "x":  362.4,
+"y": 302.27 
+},
+{
+ "x":  360.7,
+"y": 300.15 
+},
+{
+ "x": 360.22,
+"y": 297.43 
+},
+{
+ "x": 356.35,
+"y": 292.89 
+},
+{
+ "x": 356.59,
+"y": 290.47 
+},
+{
+ "x": 352.48,
+"y": 281.38 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction22(polylineData22));
+_svg.polygons.push(el);
+el.append("svg:title").text("mariposa");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("mariposa");});
+var polylineFunction23 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData23 = [
+ {
+ "x": 218.99,
+"y": 155.77 
+},
+{
+ "x": 244.86,
+"y": 156.07 
+},
+{
+ "x": 245.35,
+"y": 158.49 
+},
+{
+ "x": 243.41,
+"y": 160.61 
+},
+{
+ "x": 244.38,
+"y": 168.48 
+},
+{
+ "x": 245.59,
+"y": 168.48 
+},
+{
+ "x": 245.59,
+"y":  170.9 
+},
+{
+ "x": 246.32,
+"y":  170.9 
+},
+{
+ "x":  246.8,
+"y": 180.59 
+},
+{
+ "x": 238.82,
+"y":  182.1 
+},
+{
+ "x": 238.09,
+"y": 186.34 
+},
+{
+ "x": 241.72,
+"y": 195.12 
+},
+{
+ "x": 241.72,
+"y": 197.24 
+},
+{
+ "x": 238.82,
+"y": 199.66 
+},
+{
+ "x": 237.37,
+"y": 203.29 
+},
+{
+ "x": 237.61,
+"y": 205.11 
+},
+{
+ "x": 238.82,
+"y": 205.71 
+},
+{
+ "x": 238.82,
+"y": 207.53 
+},
+{
+ "x": 242.45,
+"y": 209.04 
+},
+{
+ "x": 244.14,
+"y": 213.58 
+},
+{
+ "x": 245.59,
+"y": 213.58 
+},
+{
+ "x": 249.94,
+"y": 216.31 
+},
+{
+ "x": 247.28,
+"y": 216.31 
+},
+{
+ "x": 239.06,
+"y": 216.31 
+},
+{
+ "x": 238.82,
+"y": 217.22 
+},
+{
+ "x": 236.64,
+"y": 217.22 
+},
+{
+ "x": 236.64,
+"y": 218.73 
+},
+{
+ "x": 226.97,
+"y": 219.03 
+},
+{
+ "x": 226.97,
+"y": 220.24 
+},
+{
+ "x": 222.37,
+"y": 220.85 
+},
+{
+ "x": 221.89,
+"y": 222.06 
+},
+{
+ "x":  217.3,
+"y": 216.31 
+},
+{
+ "x": 214.88,
+"y":  215.1 
+},
+{
+ "x": 211.73,
+"y": 211.16 
+},
+{
+ "x": 213.67,
+"y": 205.11 
+},
+{
+ "x": 208.83,
+"y": 194.51 
+},
+{
+ "x": 207.86,
+"y": 186.04 
+},
+{
+ "x": 210.04,
+"y": 179.38 
+},
+{
+ "x": 210.04,
+"y": 173.93 
+},
+{
+ "x": 208.11,
+"y": 169.39 
+},
+{
+ "x": 208.11,
+"y": 166.36 
+},
+{
+ "x": 205.93,
+"y": 163.64 
+},
+{
+ "x": 203.99,
+"y": 163.03 
+},
+{
+ "x": 203.51,
+"y": 160.61 
+},
+{
+ "x": 199.88,
+"y": 155.77 
+},
+{
+ "x": 218.99,
+"y": 155.77 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction23(polylineData23));
+_svg.polygons.push(el);
+el.append("svg:title").text("mendocino");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("mendocino");});
+var polylineFunction24 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData24 = [
+ {
+ "x": 346.19,
+"y": 312.86 
+},
+{
+ "x": 330.71,
+"y":  328.6 
+},
+{
+ "x": 320.56,
+"y": 323.46 
+},
+{
+ "x": 319.59,
+"y": 319.83 
+},
+{
+ "x": 317.41,
+"y": 319.83 
+},
+{
+ "x": 315.72,
+"y": 313.47 
+},
+{
+ "x": 317.41,
+"y": 310.75 
+},
+{
+ "x": 315.96,
+"y": 310.14 
+},
+{
+ "x": 318.14,
+"y": 306.51 
+},
+{
+ "x": 327.81,
+"y": 297.12 
+},
+{
+ "x": 327.09,
+"y":  294.1 
+},
+{
+ "x": 338.94,
+"y": 288.04 
+},
+{
+ "x": 352.48,
+"y": 281.38 
+},
+{
+ "x": 356.59,
+"y": 290.47 
+},
+{
+ "x": 356.35,
+"y": 292.89 
+},
+{
+ "x": 360.22,
+"y": 297.43 
+},
+{
+ "x":  360.7,
+"y": 300.15 
+},
+{
+ "x":  362.4,
+"y": 302.27 
+},
+{
+ "x":  365.3,
+"y": 303.18 
+},
+{
+ "x": 366.75,
+"y": 304.99 
+},
+{
+ "x": 363.85,
+"y": 306.51 
+},
+{
+ "x": 357.56,
+"y":  305.9 
+},
+{
+ "x": 354.17,
+"y": 308.02 
+},
+{
+ "x": 349.09,
+"y": 309.53 
+},
+{
+ "x": 346.19,
+"y": 312.86 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction24(polylineData24));
+_svg.polygons.push(el);
+el.append("svg:title").text("merced");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("merced");});
+var polylineFunction25 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData25 = [
+ {
+ "x": 312.09,
+"y": 92.811 
+},
+{
+ "x": 306.77,
+"y": 92.811 
+},
+{
+ "x": 306.53,
+"y": 50.132 
+},
+{
+ "x":  331.2,
+"y": 49.526 
+},
+{
+ "x": 368.44,
+"y": 50.132 
+},
+{
+ "x": 368.44,
+"y": 92.811 
+},
+{
+ "x": 312.09,
+"y": 92.811 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction25(polylineData25));
+_svg.polygons.push(el);
+el.append("svg:title").text("modoc");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("modoc");});
+var polylineFunction26 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData26 = [
+ {
+ "x": 404.96,
+"y": 240.82 
+},
+{
+ "x": 459.61,
+"y": 289.56 
+},
+{
+ "x":  421.4,
+"y": 290.16 
+},
+{
+ "x": 419.95,
+"y": 288.65 
+},
+{
+ "x": 417.29,
+"y": 289.25 
+},
+{
+ "x": 413.42,
+"y": 285.02 
+},
+{
+ "x": 410.28,
+"y": 284.11 
+},
+{
+ "x": 406.41,
+"y": 276.24 
+},
+{
+ "x": 402.06,
+"y": 276.24 
+},
+{
+ "x": 401.09,
+"y": 276.54 
+},
+{
+ "x": 399.64,
+"y": 275.33 
+},
+{
+ "x": 403.02,
+"y": 272.91 
+},
+{
+ "x": 401.81,
+"y":  271.7 
+},
+{
+ "x": 403.02,
+"y": 269.88 
+},
+{
+ "x": 401.81,
+"y": 269.28 
+},
+{
+ "x": 402.06,
+"y": 267.46 
+},
+{
+ "x": 398.19,
+"y": 265.04 
+},
+{
+ "x": 397.46,
+"y": 263.53 
+},
+{
+ "x": 397.94,
+"y": 258.68 
+},
+{
+ "x": 393.35,
+"y": 255.66 
+},
+{
+ "x": 391.66,
+"y": 256.56 
+},
+{
+ "x": 389.96,
+"y": 253.54 
+},
+{
+ "x": 388.75,
+"y": 254.45 
+},
+{
+ "x": 387.06,
+"y": 251.72 
+},
+{
+ "x": 385.13,
+"y": 251.72 
+},
+{
+ "x": 385.37,
+"y": 247.79 
+},
+{
+ "x": 383.92,
+"y": 246.58 
+},
+{
+ "x": 384.16,
+"y": 245.37 
+},
+{
+ "x": 383.19,
+"y": 245.37 
+},
+{
+ "x": 385.13,
+"y": 242.94 
+},
+{
+ "x": 384.89,
+"y": 240.82 
+},
+{
+ "x": 385.85,
+"y": 240.22 
+},
+{
+ "x": 386.34,
+"y": 241.13 
+},
+{
+ "x": 387.79,
+"y": 239.92 
+},
+{
+ "x":  387.3,
+"y": 238.71 
+},
+{
+ "x": 388.27,
+"y": 236.28 
+},
+{
+ "x": 387.79,
+"y": 233.56 
+},
+{
+ "x": 385.37,
+"y": 231.14 
+},
+{
+ "x": 385.13,
+"y": 228.11 
+},
+{
+ "x": 386.82,
+"y": 225.08 
+},
+{
+ "x": 404.96,
+"y": 240.82 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction26(polylineData26));
+_svg.polygons.push(el);
+el.append("svg:title").text("mono");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("mono");});
+var polylineFunction27 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData27 = [
+ {
+ "x": 360.22,
+"y": 379.46 
+},
+{
+ "x": 313.55,
+"y": 378.24 
+},
+{
+ "x": 307.74,
+"y": 371.89 
+},
+{
+ "x": 305.56,
+"y": 366.44 
+},
+{
+ "x": 302.42,
+"y":  362.5 
+},
+{
+ "x":  297.1,
+"y": 355.85 
+},
+{
+ "x": 293.47,
+"y": 354.33 
+},
+{
+ "x": 290.09,
+"y":  350.7 
+},
+{
+ "x": 288.64,
+"y": 341.32 
+},
+{
+ "x": 287.19,
+"y":  339.2 
+},
+{
+ "x": 288.15,
+"y":  338.9 
+},
+{
+ "x": 287.19,
+"y": 336.78 
+},
+{
+ "x": 288.88,
+"y": 333.75 
+},
+{
+ "x":  291.3,
+"y": 334.35 
+},
+{
+ "x": 292.99,
+"y": 332.84 
+},
+{
+ "x": 294.44,
+"y": 326.49 
+},
+{
+ "x":  294.2,
+"y": 321.04 
+},
+{
+ "x":  297.1,
+"y": 319.52 
+},
+{
+ "x": 299.28,
+"y": 320.73 
+},
+{
+ "x": 299.76,
+"y": 322.55 
+},
+{
+ "x": 305.32,
+"y":    328 
+},
+{
+ "x": 306.53,
+"y":  327.7 
+},
+{
+ "x": 307.98,
+"y": 329.21 
+},
+{
+ "x": 306.53,
+"y": 330.72 
+},
+{
+ "x": 313.79,
+"y": 334.96 
+},
+{
+ "x": 312.82,
+"y": 337.68 
+},
+{
+ "x": 314.51,
+"y":  338.9 
+},
+{
+ "x": 313.79,
+"y": 341.01 
+},
+{
+ "x": 316.45,
+"y": 340.71 
+},
+{
+ "x": 324.67,
+"y":  350.7 
+},
+{
+ "x": 324.67,
+"y": 353.73 
+},
+{
+ "x": 326.85,
+"y": 354.03 
+},
+{
+ "x": 327.33,
+"y": 352.52 
+},
+{
+ "x": 329.26,
+"y": 352.82 
+},
+{
+ "x": 329.75,
+"y":  350.7 
+},
+{
+ "x": 337.49,
+"y": 357.36 
+},
+{
+ "x": 338.94,
+"y": 357.06 
+},
+{
+ "x": 337.24,
+"y": 353.12 
+},
+{
+ "x": 337.49,
+"y": 351.61 
+},
+{
+ "x":  339.9,
+"y": 353.12 
+},
+{
+ "x":  339.9,
+"y": 355.24 
+},
+{
+ "x": 342.32,
+"y": 356.45 
+},
+{
+ "x": 340.15,
+"y": 359.48 
+},
+{
+ "x": 341.84,
+"y": 362.81 
+},
+{
+ "x": 343.53,
+"y": 362.81 
+},
+{
+ "x": 346.43,
+"y": 366.74 
+},
+{
+ "x": 348.13,
+"y": 366.44 
+},
+{
+ "x": 350.54,
+"y": 369.77 
+},
+{
+ "x": 349.82,
+"y": 370.37 
+},
+{
+ "x": 357.32,
+"y":  372.8 
+},
+{
+ "x": 358.77,
+"y": 374.61 
+},
+{
+ "x": 358.04,
+"y": 376.73 
+},
+{
+ "x": 359.98,
+"y": 377.94 
+},
+{
+ "x": 360.22,
+"y": 379.46 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction27(polylineData27));
+_svg.polygons.push(el);
+el.append("svg:title").text("monterey");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("monterey");});
+var polylineFunction28 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData28 = [
+ {
+ "x":  267.6,
+"y": 216.31 
+},
+{
+ "x": 272.43,
+"y": 218.12 
+},
+{
+ "x": 274.37,
+"y": 223.27 
+},
+{
+ "x": 273.88,
+"y": 224.18 
+},
+{
+ "x": 275.82,
+"y": 225.69 
+},
+{
+ "x": 275.82,
+"y":  226.9 
+},
+{
+ "x": 277.27,
+"y": 227.81 
+},
+{
+ "x": 276.79,
+"y": 229.02 
+},
+{
+ "x":    278,
+"y": 229.32 
+},
+{
+ "x": 279.45,
+"y": 234.77 
+},
+{
+ "x": 278.72,
+"y": 239.92 
+},
+{
+ "x": 281.86,
+"y": 245.37 
+},
+{
+ "x": 275.09,
+"y": 245.37 
+},
+{
+ "x": 274.85,
+"y": 252.63 
+},
+{
+ "x": 276.06,
+"y": 253.84 
+},
+{
+ "x": 273.64,
+"y": 254.45 
+},
+{
+ "x": 269.53,
+"y": 253.54 
+},
+{
+ "x": 268.56,
+"y": 252.63 
+},
+{
+ "x": 269.05,
+"y": 250.21 
+},
+{
+ "x": 266.39,
+"y": 243.55 
+},
+{
+ "x": 264.94,
+"y": 243.25 
+},
+{
+ "x": 265.42,
+"y": 241.73 
+},
+{
+ "x": 263.49,
+"y": 240.52 
+},
+{
+ "x": 263.97,
+"y": 238.71 
+},
+{
+ "x": 261.55,
+"y": 236.89 
+},
+{
+ "x": 260.34,
+"y": 234.17 
+},
+{
+ "x": 256.71,
+"y": 230.84 
+},
+{
+ "x": 257.92,
+"y":  226.9 
+},
+{
+ "x": 264.21,
+"y": 225.08 
+},
+{
+ "x": 266.87,
+"y": 221.76 
+},
+{
+ "x": 266.39,
+"y": 220.24 
+},
+{
+ "x": 267.84,
+"y": 219.03 
+},
+{
+ "x": 266.87,
+"y": 217.22 
+},
+{
+ "x":  267.6,
+"y": 216.31 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction28(polylineData28));
+_svg.polygons.push(el);
+el.append("svg:title").text("napa");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("napa");});
+var polylineFunction29 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData29 = [
+ {
+ "x":    315,
+"y": 207.23 
+},
+{
+ "x": 314.51,
+"y": 200.26 
+},
+{
+ "x": 315.24,
+"y": 194.51 
+},
+{
+ "x": 317.41,
+"y": 193.61 
+},
+{
+ "x": 318.38,
+"y": 191.18 
+},
+{
+ "x": 320.07,
+"y": 190.88 
+},
+{
+ "x": 321.04,
+"y": 188.76 
+},
+{
+ "x": 336.28,
+"y": 185.43 
+},
+{
+ "x": 338.45,
+"y": 182.41 
+},
+{
+ "x": 342.81,
+"y": 180.59 
+},
+{
+ "x": 344.02,
+"y":  181.2 
+},
+{
+ "x": 347.64,
+"y": 185.74 
+},
+{
+ "x": 368.92,
+"y": 185.74 
+},
+{
+ "x": 368.44,
+"y": 192.39 
+},
+{
+ "x": 340.87,
+"y": 192.39 
+},
+{
+ "x": 337.24,
+"y": 194.21 
+},
+{
+ "x": 326.36,
+"y":  204.5 
+},
+{
+ "x": 324.19,
+"y": 208.74 
+},
+{
+ "x": 320.56,
+"y": 207.23 
+},
+{
+ "x": 318.14,
+"y": 208.74 
+},
+{
+ "x":    315,
+"y": 207.23 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction29(polylineData29));
+_svg.polygons.push(el);
+el.append("svg:title").text("nevada");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("nevada");});
+var polylineFunction30 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData30 = [
+ {
+ "x": 466.87,
+"y": 479.34 
+},
+{
+ "x":  468.8,
+"y": 484.19 
+},
+{
+ "x": 471.22,
+"y":  485.4 
+},
+{
+ "x": 473.64,
+"y": 489.33 
+},
+{
+ "x": 477.02,
+"y": 491.15 
+},
+{
+ "x": 473.64,
+"y":  496.9 
+},
+{
+ "x": 473.15,
+"y": 501.14 
+},
+{
+ "x": 470.74,
+"y": 501.74 
+},
+{
+ "x": 470.74,
+"y": 503.25 
+},
+{
+ "x": 466.63,
+"y": 500.53 
+},
+{
+ "x": 463.96,
+"y":  497.5 
+},
+{
+ "x": 458.64,
+"y": 492.66 
+},
+{
+ "x":  449.7,
+"y":  485.7 
+},
+{
+ "x": 449.21,
+"y": 483.58 
+},
+{
+ "x": 454.05,
+"y": 478.43 
+},
+{
+ "x": 454.29,
+"y": 476.62 
+},
+{
+ "x": 460.58,
+"y": 476.32 
+},
+{
+ "x": 466.87,
+"y": 479.34 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction30(polylineData30));
+_svg.polygons.push(el);
+el.append("svg:title").text("orange");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("orange");});
+var polylineFunction31 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData31 = [
+ {
+ "x": 368.44,
+"y": 202.99 
+},
+{
+ "x": 368.44,
+"y": 205.71 
+},
+{
+ "x": 362.88,
+"y": 205.11 
+},
+{
+ "x": 361.19,
+"y": 206.92 
+},
+{
+ "x": 358.04,
+"y": 207.83 
+},
+{
+ "x": 349.82,
+"y": 207.53 
+},
+{
+ "x": 349.09,
+"y": 209.95 
+},
+{
+ "x":  344.5,
+"y": 213.58 
+},
+{
+ "x": 337.24,
+"y": 208.74 
+},
+{
+ "x": 334.34,
+"y": 208.74 
+},
+{
+ "x": 331.68,
+"y": 211.77 
+},
+{
+ "x": 329.75,
+"y": 211.77 
+},
+{
+ "x": 324.67,
+"y": 213.89 
+},
+{
+ "x": 322.25,
+"y": 219.03 
+},
+{
+ "x": 320.07,
+"y": 223.87 
+},
+{
+ "x": 306.29,
+"y": 223.27 
+},
+{
+ "x": 306.05,
+"y": 222.06 
+},
+{
+ "x": 307.02,
+"y": 222.06 
+},
+{
+ "x": 307.02,
+"y": 212.98 
+},
+{
+ "x": 308.95,
+"y": 212.98 
+},
+{
+ "x": 308.95,
+"y": 209.35 
+},
+{
+ "x":  313.3,
+"y": 206.62 
+},
+{
+ "x": 318.14,
+"y": 208.74 
+},
+{
+ "x": 320.56,
+"y": 207.23 
+},
+{
+ "x": 324.19,
+"y": 208.74 
+},
+{
+ "x": 326.36,
+"y":  204.5 
+},
+{
+ "x": 337.24,
+"y": 194.21 
+},
+{
+ "x": 340.87,
+"y": 192.39 
+},
+{
+ "x": 364.81,
+"y":  192.7 
+},
+{
+ "x": 368.44,
+"y": 192.39 
+},
+{
+ "x": 368.44,
+"y": 202.99 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction31(polylineData31));
+_svg.polygons.push(el);
+el.append("svg:title").text("placer");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("placer");});
+var polylineFunction32 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData32 = [
+ {
+ "x": 324.19,
+"y": 176.96 
+},
+{
+ "x": 317.17,
+"y": 172.11 
+},
+{
+ "x": 316.93,
+"y":  170.6 
+},
+{
+ "x": 307.98,
+"y": 160.61 
+},
+{
+ "x": 308.71,
+"y": 160.01 
+},
+{
+ "x": 308.95,
+"y": 153.35 
+},
+{
+ "x": 310.88,
+"y": 150.93 
+},
+{
+ "x": 309.19,
+"y": 149.41 
+},
+{
+ "x": 308.95,
+"y":  147.6 
+},
+{
+ "x": 306.29,
+"y": 146.99 
+},
+{
+ "x": 306.53,
+"y": 145.48 
+},
+{
+ "x": 311.13,
+"y": 142.75 
+},
+{
+ "x": 309.92,
+"y": 137.31 
+},
+{
+ "x": 305.81,
+"y": 136.09 
+},
+{
+ "x": 305.32,
+"y": 131.55 
+},
+{
+ "x": 323.46,
+"y": 131.55 
+},
+{
+ "x": 323.22,
+"y": 141.85 
+},
+{
+ "x": 327.57,
+"y": 143.96 
+},
+{
+ "x": 329.75,
+"y": 145.48 
+},
+{
+ "x":  331.2,
+"y": 144.87 
+},
+{
+ "x": 331.44,
+"y": 143.06 
+},
+{
+ "x": 336.52,
+"y": 138.52 
+},
+{
+ "x":  344.5,
+"y": 140.94 
+},
+{
+ "x": 354.17,
+"y": 149.72 
+},
+{
+ "x": 357.07,
+"y": 149.72 
+},
+{
+ "x": 361.19,
+"y": 157.59 
+},
+{
+ "x": 363.85,
+"y": 160.31 
+},
+{
+ "x": 363.85,
+"y": 168.18 
+},
+{
+ "x": 361.91,
+"y":    170 
+},
+{
+ "x": 362.15,
+"y": 171.51 
+},
+{
+ "x": 348.61,
+"y": 171.51 
+},
+{
+ "x": 348.13,
+"y": 172.42 
+},
+{
+ "x": 341.11,
+"y": 172.11 
+},
+{
+ "x":  339.9,
+"y": 173.33 
+},
+{
+ "x": 338.94,
+"y": 172.11 
+},
+{
+ "x": 335.55,
+"y": 171.51 
+},
+{
+ "x": 331.68,
+"y": 167.88 
+},
+{
+ "x":  328.3,
+"y":    170 
+},
+{
+ "x":  328.3,
+"y": 173.63 
+},
+{
+ "x": 324.19,
+"y": 176.96 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction32(polylineData32));
+_svg.polygons.push(el);
+el.append("svg:title").text("plumas");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("plumas");});
+var polylineFunction33 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData33 = [
+ {
+ "x": 534.34,
+"y": 503.25 
+},
+{
+ "x": 484.76,
+"y": 503.25 
+},
+{
+ "x": 479.44,
+"y": 500.23 
+},
+{
+ "x": 479.93,
+"y": 499.02 
+},
+{
+ "x": 473.88,
+"y": 499.02 
+},
+{
+ "x": 473.64,
+"y":  496.9 
+},
+{
+ "x": 477.02,
+"y": 491.15 
+},
+{
+ "x": 472.19,
+"y": 487.82 
+},
+{
+ "x": 471.22,
+"y":  485.4 
+},
+{
+ "x": 468.32,
+"y": 483.28 
+},
+{
+ "x": 467.11,
+"y": 478.43 
+},
+{
+ "x": 467.11,
+"y": 477.53 
+},
+{
+ "x": 469.29,
+"y": 477.22 
+},
+{
+ "x": 469.29,
+"y":  475.1 
+},
+{
+ "x": 471.22,
+"y":  474.2 
+},
+{
+ "x":  471.7,
+"y": 471.47 
+},
+{
+ "x": 478.96,
+"y": 471.17 
+},
+{
+ "x": 478.96,
+"y": 472.08 
+},
+{
+ "x": 497.82,
+"y": 472.68 
+},
+{
+ "x": 498.06,
+"y": 471.47 
+},
+{
+ "x": 529.99,
+"y": 471.77 
+},
+{
+ "x": 566.26,
+"y": 471.47 
+},
+{
+ "x": 566.26,
+"y": 469.05 
+},
+{
+ "x": 604.23,
+"y": 469.05 
+},
+{
+ "x": 602.05,
+"y": 472.38 
+},
+{
+ "x": 602.78,
+"y": 473.29 
+},
+{
+ "x": 600.12,
+"y":  475.1 
+},
+{
+ "x": 599.15,
+"y": 477.22 
+},
+{
+ "x": 599.88,
+"y": 487.51 
+},
+{
+ "x": 599.15,
+"y": 489.33 
+},
+{
+ "x": 599.63,
+"y": 492.66 
+},
+{
+ "x": 597.94,
+"y":  497.2 
+},
+{
+ "x": 595.76,
+"y": 498.11 
+},
+{
+ "x": 596.25,
+"y": 499.62 
+},
+{
+ "x": 592.86,
+"y": 503.25 
+},
+{
+ "x": 534.34,
+"y": 503.25 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction33(polylineData33));
+_svg.polygons.push(el);
+el.append("svg:title").text("riverside");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("riverside");});
+var polylineFunction34 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData34 = [
+ {
+ "x": 326.36,
+"y": 246.27 
+},
+{
+ "x":  323.7,
+"y": 245.97 
+},
+{
+ "x": 317.41,
+"y": 248.69 
+},
+{
+ "x":    315,
+"y": 248.39 
+},
+{
+ "x": 309.43,
+"y": 249.91 
+},
+{
+ "x": 308.22,
+"y": 248.39 
+},
+{
+ "x": 306.29,
+"y": 248.39 
+},
+{
+ "x": 301.94,
+"y": 255.35 
+},
+{
+ "x": 302.42,
+"y": 256.87 
+},
+{
+ "x": 297.83,
+"y": 256.87 
+},
+{
+ "x": 296.62,
+"y":  260.5 
+},
+{
+ "x": 292.99,
+"y":  260.8 
+},
+{
+ "x":  291.3,
+"y": 258.68 
+},
+{
+ "x": 293.23,
+"y": 258.68 
+},
+{
+ "x":  294.2,
+"y": 257.47 
+},
+{
+ "x": 295.65,
+"y": 257.47 
+},
+{
+ "x": 297.58,
+"y": 253.84 
+},
+{
+ "x": 300.49,
+"y": 251.42 
+},
+{
+ "x": 301.21,
+"y": 246.88 
+},
+{
+ "x": 304.84,
+"y": 240.52 
+},
+{
+ "x": 304.36,
+"y": 239.31 
+},
+{
+ "x": 305.32,
+"y": 236.59 
+},
+{
+ "x": 303.15,
+"y": 235.38 
+},
+{
+ "x": 305.32,
+"y": 233.56 
+},
+{
+ "x": 305.32,
+"y": 231.74 
+},
+{
+ "x": 302.42,
+"y": 227.81 
+},
+{
+ "x": 300.97,
+"y": 227.81 
+},
+{
+ "x": 300.24,
+"y":  226.3 
+},
+{
+ "x": 301.21,
+"y": 222.97 
+},
+{
+ "x": 320.07,
+"y": 223.87 
+},
+{
+ "x": 320.32,
+"y": 224.78 
+},
+{
+ "x": 321.04,
+"y": 223.87 
+},
+{
+ "x": 325.64,
+"y": 234.77 
+},
+{
+ "x": 326.36,
+"y": 246.27 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction34(polylineData34));
+_svg.polygons.push(el);
+el.append("svg:title").text("sacramento");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("sacramento");});
+var polylineFunction35 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData35 = [
+ {
+ "x": 330.71,
+"y":  328.6 
+},
+{
+ "x": 344.02,
+"y": 342.53 
+},
+{
+ "x": 344.02,
+"y":  350.4 
+},
+{
+ "x":  339.9,
+"y": 352.21 
+},
+{
+ "x":  339.9,
+"y": 353.12 
+},
+{
+ "x": 337.49,
+"y": 351.61 
+},
+{
+ "x": 337.24,
+"y": 353.12 
+},
+{
+ "x": 338.94,
+"y": 357.06 
+},
+{
+ "x": 337.49,
+"y": 357.36 
+},
+{
+ "x": 329.75,
+"y":  350.7 
+},
+{
+ "x": 329.26,
+"y": 352.82 
+},
+{
+ "x": 327.33,
+"y": 352.52 
+},
+{
+ "x": 326.85,
+"y": 354.03 
+},
+{
+ "x": 324.67,
+"y": 353.73 
+},
+{
+ "x": 324.67,
+"y":  350.7 
+},
+{
+ "x": 316.45,
+"y": 340.71 
+},
+{
+ "x": 313.79,
+"y": 341.01 
+},
+{
+ "x": 314.51,
+"y":  338.9 
+},
+{
+ "x": 312.82,
+"y": 337.68 
+},
+{
+ "x": 313.79,
+"y": 334.96 
+},
+{
+ "x": 311.85,
+"y": 333.75 
+},
+{
+ "x": 307.26,
+"y": 331.93 
+},
+{
+ "x": 306.53,
+"y": 330.72 
+},
+{
+ "x": 307.98,
+"y": 329.21 
+},
+{
+ "x": 306.53,
+"y":  327.7 
+},
+{
+ "x": 305.32,
+"y":    328 
+},
+{
+ "x": 299.76,
+"y": 322.55 
+},
+{
+ "x": 299.28,
+"y": 320.73 
+},
+{
+ "x": 300.49,
+"y": 319.22 
+},
+{
+ "x": 302.66,
+"y": 320.13 
+},
+{
+ "x": 305.32,
+"y": 318.01 
+},
+{
+ "x": 305.32,
+"y": 316.19 
+},
+{
+ "x": 307.26,
+"y": 315.59 
+},
+{
+ "x": 309.19,
+"y":  317.4 
+},
+{
+ "x":    315,
+"y":  317.1 
+},
+{
+ "x": 316.45,
+"y":  317.1 
+},
+{
+ "x": 317.41,
+"y": 319.83 
+},
+{
+ "x": 319.59,
+"y": 319.83 
+},
+{
+ "x": 320.56,
+"y": 323.46 
+},
+{
+ "x": 330.71,
+"y":  328.6 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction35(polylineData35));
+_svg.polygons.push(el);
+el.append("svg:title").text("san benito");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("san benito");});
+var polylineFunction36 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData36 = [
+ {
+ "x": 551.27,
+"y": 376.43 
+},
+{
+ "x": 595.04,
+"y": 419.41 
+},
+{
+ "x": 596.25,
+"y": 426.37 
+},
+{
+ "x": 598.67,
+"y":  429.1 
+},
+{
+ "x":  597.7,
+"y": 430.61 
+},
+{
+ "x": 603.02,
+"y": 435.76 
+},
+{
+ "x": 606.16,
+"y": 448.47 
+},
+{
+ "x": 614.87,
+"y": 455.43 
+},
+{
+ "x": 616.32,
+"y": 459.36 
+},
+{
+ "x":  613.9,
+"y": 460.27 
+},
+{
+ "x": 609.31,
+"y": 465.12 
+},
+{
+ "x":  605.2,
+"y": 467.23 
+},
+{
+ "x": 604.23,
+"y": 469.05 
+},
+{
+ "x": 566.26,
+"y": 469.05 
+},
+{
+ "x": 566.26,
+"y": 471.47 
+},
+{
+ "x": 529.99,
+"y": 471.77 
+},
+{
+ "x": 498.06,
+"y": 471.47 
+},
+{
+ "x": 497.82,
+"y": 472.68 
+},
+{
+ "x": 485.73,
+"y": 472.68 
+},
+{
+ "x": 485.49,
+"y": 472.08 
+},
+{
+ "x": 478.96,
+"y": 472.08 
+},
+{
+ "x": 478.96,
+"y": 471.17 
+},
+{
+ "x":  471.7,
+"y": 471.47 
+},
+{
+ "x": 471.22,
+"y":  474.2 
+},
+{
+ "x": 469.29,
+"y":  475.1 
+},
+{
+ "x": 469.29,
+"y": 477.22 
+},
+{
+ "x": 467.11,
+"y": 477.53 
+},
+{
+ "x": 466.87,
+"y": 479.34 
+},
+{
+ "x": 462.03,
+"y": 476.32 
+},
+{
+ "x": 461.55,
+"y":  474.5 
+},
+{
+ "x":    463,
+"y": 471.77 
+},
+{
+ "x": 464.21,
+"y": 472.08 
+},
+{
+ "x": 468.08,
+"y": 459.06 
+},
+{
+ "x": 467.35,
+"y": 443.63 
+},
+{
+ "x":  468.8,
+"y": 378.85 
+},
+{
+ "x": 551.27,
+"y": 376.43 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction36(polylineData36));
+_svg.polygons.push(el);
+el.append("svg:title").text("san bernardino");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("san bernardino");});
+var polylineFunction37 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData37 = [
+ {
+ "x": 473.88,
+"y": 499.02 
+},
+{
+ "x": 479.93,
+"y": 499.02 
+},
+{
+ "x": 479.44,
+"y": 500.23 
+},
+{
+ "x": 484.76,
+"y": 503.25 
+},
+{
+ "x": 534.34,
+"y": 503.25 
+},
+{
+ "x": 533.85,
+"y": 521.72 
+},
+{
+ "x": 532.89,
+"y": 521.72 
+},
+{
+ "x": 533.13,
+"y": 545.93 
+},
+{
+ "x": 490.57,
+"y": 550.47 
+},
+{
+ "x": 490.08,
+"y": 545.03 
+},
+{
+ "x": 488.39,
+"y": 542.91 
+},
+{
+ "x": 491.78,
+"y": 545.63 
+},
+{
+ "x": 491.29,
+"y":  542.6 
+},
+{
+ "x": 488.63,
+"y": 540.18 
+},
+{
+ "x": 487.66,
+"y": 540.18 
+},
+{
+ "x": 486.46,
+"y":    542 
+},
+{
+ "x": 485.49,
+"y": 539.27 
+},
+{
+ "x":  486.7,
+"y": 537.46 
+},
+{
+ "x": 484.76,
+"y": 535.34 
+},
+{
+ "x": 485.73,
+"y":  530.5 
+},
+{
+ "x": 483.31,
+"y": 520.51 
+},
+{
+ "x": 477.02,
+"y": 509.61 
+},
+{
+ "x": 471.46,
+"y": 504.77 
+},
+{
+ "x": 470.74,
+"y": 501.74 
+},
+{
+ "x": 473.15,
+"y": 501.14 
+},
+{
+ "x": 473.88,
+"y": 499.02 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction37(polylineData37));
+_svg.polygons.push(el);
+el.append("svg:title").text("san diego");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("san diego");});
+var polylineFunction38 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData38 = [
+ {
+ "x": 269.05,
+"y": 277.75 
+},
+{
+ "x": 264.94,
+"y": 277.75 
+},
+{
+ "x": 263.97,
+"y": 273.21 
+},
+{
+ "x": 266.87,
+"y":  271.7 
+},
+{
+ "x": 267.35,
+"y":  272.3 
+},
+{
+ "x": 269.77,
+"y":  272.3 
+},
+{
+ "x": 270.74,
+"y": 275.94 
+},
+{
+ "x": 269.05,
+"y": 277.75 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction38(polylineData38));
+_svg.polygons.push(el);
+el.append("svg:title").text("san francisco");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("san francisco");});
+var polylineFunction39 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData39 = [
+ {
+ "x": 302.42,
+"y": 256.87 
+},
+{
+ "x": 301.94,
+"y": 255.35 
+},
+{
+ "x": 306.29,
+"y": 248.39 
+},
+{
+ "x": 308.22,
+"y": 248.39 
+},
+{
+ "x": 309.43,
+"y": 249.91 
+},
+{
+ "x": 320.32,
+"y": 247.79 
+},
+{
+ "x":  323.7,
+"y": 245.97 
+},
+{
+ "x": 326.36,
+"y": 246.27 
+},
+{
+ "x": 329.26,
+"y": 256.87 
+},
+{
+ "x": 329.75,
+"y":  260.5 
+},
+{
+ "x": 329.75,
+"y": 273.51 
+},
+{
+ "x": 330.71,
+"y": 273.82 
+},
+{
+ "x": 329.75,
+"y": 275.94 
+},
+{
+ "x": 327.09,
+"y": 274.73 
+},
+{
+ "x": 317.41,
+"y": 278.06 
+},
+{
+ "x": 306.29,
+"y": 289.25 
+},
+{
+ "x": 305.32,
+"y": 286.83 
+},
+{
+ "x": 303.15,
+"y": 286.23 
+},
+{
+ "x": 303.63,
+"y": 270.19 
+},
+{
+ "x": 302.18,
+"y": 268.97 
+},
+{
+ "x": 303.15,
+"y": 265.04 
+},
+{
+ "x": 301.94,
+"y": 263.83 
+},
+{
+ "x": 301.69,
+"y": 261.71 
+},
+{
+ "x":  302.9,
+"y":  260.5 
+},
+{
+ "x": 301.69,
+"y": 259.29 
+},
+{
+ "x": 302.42,
+"y": 256.87 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction39(polylineData39));
+_svg.polygons.push(el);
+el.append("svg:title").text("san joaquin");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("san joaquin");});
+var polylineFunction40 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData40 = [
+ {
+ "x":    315,
+"y": 378.85 
+},
+{
+ "x": 360.22,
+"y": 379.46 
+},
+{
+ "x": 360.22,
+"y": 387.93 
+},
+{
+ "x": 364.81,
+"y": 388.23 
+},
+{
+ "x": 364.81,
+"y": 392.77 
+},
+{
+ "x": 368.92,
+"y": 397.31 
+},
+{
+ "x":    374,
+"y": 397.31 
+},
+{
+ "x":    374,
+"y": 401.85 
+},
+{
+ "x": 377.15,
+"y": 401.85 
+},
+{
+ "x": 377.15,
+"y": 406.39 
+},
+{
+ "x": 382.71,
+"y":    407 
+},
+{
+ "x": 383.19,
+"y": 410.93 
+},
+{
+ "x":  387.3,
+"y": 410.63 
+},
+{
+ "x": 387.79,
+"y": 415.48 
+},
+{
+ "x": 390.45,
+"y": 416.08 
+},
+{
+ "x": 391.17,
+"y": 417.29 
+},
+{
+ "x": 391.17,
+"y": 425.46 
+},
+{
+ "x":    389,
+"y": 425.77 
+},
+{
+ "x": 382.71,
+"y": 421.53 
+},
+{
+ "x": 379.32,
+"y": 421.83 
+},
+{
+ "x": 374.97,
+"y":  418.5 
+},
+{
+ "x": 364.81,
+"y": 414.57 
+},
+{
+ "x": 360.94,
+"y":  418.5 
+},
+{
+ "x": 355.38,
+"y": 420.32 
+},
+{
+ "x": 356.35,
+"y": 422.74 
+},
+{
+ "x": 356.11,
+"y": 425.46 
+},
+{
+ "x": 348.61,
+"y": 420.62 
+},
+{
+ "x": 344.74,
+"y": 421.53 
+},
+{
+ "x": 344.02,
+"y": 422.44 
+},
+{
+ "x": 342.56,
+"y": 422.44 
+},
+{
+ "x": 343.53,
+"y": 413.66 
+},
+{
+ "x": 342.56,
+"y": 411.54 
+},
+{
+ "x": 339.66,
+"y": 410.33 
+},
+{
+ "x": 339.42,
+"y": 411.24 
+},
+{
+ "x": 334.34,
+"y": 408.21 
+},
+{
+ "x": 332.65,
+"y": 405.49 
+},
+{
+ "x": 333.86,
+"y": 402.16 
+},
+{
+ "x": 335.07,
+"y": 402.76 
+},
+{
+ "x": 332.89,
+"y":  395.8 
+},
+{
+ "x": 327.81,
+"y":  395.5 
+},
+{
+ "x": 321.28,
+"y": 387.02 
+},
+{
+ "x": 315.96,
+"y": 383.09 
+},
+{
+ "x":    315,
+"y": 378.85 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction40(polylineData40));
+_svg.polygons.push(el);
+el.append("svg:title").text("san luis obispo");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("san luis obispo");});
+var polylineFunction41 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData41 = [
+ {
+ "x": 278.72,
+"y": 300.15 
+},
+{
+ "x": 278.48,
+"y": 303.48 
+},
+{
+ "x": 274.85,
+"y": 303.48 
+},
+{
+ "x": 274.37,
+"y": 304.69 
+},
+{
+ "x": 271.47,
+"y": 304.69 
+},
+{
+ "x": 271.47,
+"y": 307.11 
+},
+{
+ "x": 267.84,
+"y": 301.06 
+},
+{
+ "x": 268.32,
+"y": 293.19 
+},
+{
+ "x": 266.63,
+"y": 291.07 
+},
+{
+ "x": 266.15,
+"y": 288.04 
+},
+{
+ "x": 264.45,
+"y": 287.44 
+},
+{
+ "x": 263.73,
+"y": 282.29 
+},
+{
+ "x": 264.94,
+"y": 280.48 
+},
+{
+ "x": 264.94,
+"y": 277.75 
+},
+{
+ "x": 269.05,
+"y": 277.75 
+},
+{
+ "x": 270.26,
+"y": 279.87 
+},
+{
+ "x": 269.77,
+"y": 282.29 
+},
+{
+ "x": 273.64,
+"y":  283.5 
+},
+{
+ "x": 281.62,
+"y": 289.25 
+},
+{
+ "x": 277.03,
+"y": 291.07 
+},
+{
+ "x": 276.06,
+"y":  294.7 
+},
+{
+ "x": 277.03,
+"y": 298.03 
+},
+{
+ "x": 278.72,
+"y": 300.15 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction41(polylineData41));
+_svg.polygons.push(el);
+el.append("svg:title").text("san mateo");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("san mateo");});
+var polylineFunction42 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData42 = [
+ {
+ "x": 391.17,
+"y": 425.46 
+},
+{
+ "x": 392.14,
+"y": 425.77 
+},
+{
+ "x": 391.66,
+"y": 450.59 
+},
+{
+ "x": 392.38,
+"y":  451.8 
+},
+{
+ "x": 386.34,
+"y": 449.98 
+},
+{
+ "x": 382.71,
+"y": 451.19 
+},
+{
+ "x": 373.52,
+"y": 449.98 
+},
+{
+ "x": 366.02,
+"y": 448.47 
+},
+{
+ "x": 357.07,
+"y": 448.47 
+},
+{
+ "x": 351.75,
+"y": 448.77 
+},
+{
+ "x": 347.64,
+"y": 443.93 
+},
+{
+ "x": 344.74,
+"y": 443.02 
+},
+{
+ "x": 343.05,
+"y": 442.41 
+},
+{
+ "x": 342.56,
+"y": 439.99 
+},
+{
+ "x": 344.02,
+"y": 436.97 
+},
+{
+ "x": 344.02,
+"y": 433.94 
+},
+{
+ "x": 342.81,
+"y": 431.82 
+},
+{
+ "x":  344.5,
+"y": 427.58 
+},
+{
+ "x": 342.08,
+"y": 423.65 
+},
+{
+ "x": 342.56,
+"y": 422.44 
+},
+{
+ "x": 348.61,
+"y": 420.62 
+},
+{
+ "x": 356.11,
+"y": 425.46 
+},
+{
+ "x": 356.35,
+"y": 422.74 
+},
+{
+ "x": 355.38,
+"y": 420.32 
+},
+{
+ "x": 360.94,
+"y":  418.5 
+},
+{
+ "x": 364.81,
+"y": 414.57 
+},
+{
+ "x": 374.97,
+"y":  418.5 
+},
+{
+ "x": 379.32,
+"y": 421.83 
+},
+{
+ "x": 382.71,
+"y": 421.53 
+},
+{
+ "x":    389,
+"y": 425.77 
+},
+{
+ "x": 391.17,
+"y": 425.46 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction42(polylineData42));
+_svg.polygons.push(el);
+el.append("svg:title").text("santa barbara");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("santa barbara");});
+var polylineFunction43 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData43 = [
+ {
+ "x": 281.62,
+"y": 289.25 
+},
+{
+ "x": 285.49,
+"y": 290.47 
+},
+{
+ "x": 286.46,
+"y": 289.56 
+},
+{
+ "x": 288.64,
+"y": 290.16 
+},
+{
+ "x": 289.12,
+"y": 289.25 
+},
+{
+ "x": 306.29,
+"y": 289.25 
+},
+{
+ "x": 306.05,
+"y": 291.07 
+},
+{
+ "x": 307.02,
+"y": 291.68 
+},
+{
+ "x": 306.29,
+"y": 292.89 
+},
+{
+ "x":  307.5,
+"y":  294.7 
+},
+{
+ "x": 309.19,
+"y":  294.7 
+},
+{
+ "x": 308.71,
+"y": 300.15 
+},
+{
+ "x":  307.5,
+"y": 300.15 
+},
+{
+ "x": 307.74,
+"y": 302.88 
+},
+{
+ "x": 309.19,
+"y": 304.39 
+},
+{
+ "x": 309.19,
+"y": 306.51 
+},
+{
+ "x": 312.58,
+"y":  305.9 
+},
+{
+ "x": 313.55,
+"y": 306.51 
+},
+{
+ "x": 315.24,
+"y":  305.3 
+},
+{
+ "x": 316.93,
+"y": 307.42 
+},
+{
+ "x":  316.2,
+"y": 310.44 
+},
+{
+ "x": 317.41,
+"y": 311.65 
+},
+{
+ "x": 315.72,
+"y": 313.47 
+},
+{
+ "x": 316.45,
+"y":  317.1 
+},
+{
+ "x": 309.19,
+"y":  317.4 
+},
+{
+ "x": 307.26,
+"y": 315.59 
+},
+{
+ "x": 305.32,
+"y": 316.19 
+},
+{
+ "x": 305.32,
+"y": 318.01 
+},
+{
+ "x": 302.66,
+"y": 320.13 
+},
+{
+ "x": 301.21,
+"y": 319.83 
+},
+{
+ "x": 298.55,
+"y":  316.8 
+},
+{
+ "x":  297.1,
+"y":  316.8 
+},
+{
+ "x": 296.86,
+"y": 314.38 
+},
+{
+ "x": 291.78,
+"y": 311.35 
+},
+{
+ "x":  291.3,
+"y": 309.53 
+},
+{
+ "x":  283.8,
+"y": 306.51 
+},
+{
+ "x": 283.07,
+"y": 304.09 
+},
+{
+ "x": 280.41,
+"y": 302.88 
+},
+{
+ "x": 278.72,
+"y": 300.15 
+},
+{
+ "x": 276.06,
+"y":  294.7 
+},
+{
+ "x": 276.79,
+"y": 291.98 
+},
+{
+ "x": 281.62,
+"y": 289.25 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction43(polylineData43));
+_svg.polygons.push(el);
+el.append("svg:title").text("santa clara");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("santa clara");});
+var polylineFunction44 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData44 = [
+ {
+ "x": 271.47,
+"y": 307.11 
+},
+{
+ "x": 271.47,
+"y": 304.69 
+},
+{
+ "x": 274.37,
+"y": 304.69 
+},
+{
+ "x": 274.85,
+"y": 303.48 
+},
+{
+ "x": 278.48,
+"y": 303.48 
+},
+{
+ "x": 278.72,
+"y": 300.15 
+},
+{
+ "x": 280.41,
+"y": 302.88 
+},
+{
+ "x": 283.07,
+"y": 304.09 
+},
+{
+ "x":  283.8,
+"y": 306.51 
+},
+{
+ "x":  291.3,
+"y": 309.53 
+},
+{
+ "x": 291.78,
+"y": 311.35 
+},
+{
+ "x": 296.86,
+"y": 314.38 
+},
+{
+ "x":  297.1,
+"y":  316.8 
+},
+{
+ "x": 298.55,
+"y":  316.8 
+},
+{
+ "x": 300.49,
+"y": 319.22 
+},
+{
+ "x": 299.28,
+"y": 320.73 
+},
+{
+ "x": 298.31,
+"y": 319.83 
+},
+{
+ "x":  297.1,
+"y": 319.52 
+},
+{
+ "x":  294.2,
+"y": 321.04 
+},
+{
+ "x":  291.3,
+"y":  317.4 
+},
+{
+ "x": 288.15,
+"y": 315.59 
+},
+{
+ "x": 287.43,
+"y":  316.5 
+},
+{
+ "x": 282.83,
+"y":  316.5 
+},
+{
+ "x": 277.51,
+"y": 313.77 
+},
+{
+ "x": 271.47,
+"y": 307.11 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction44(polylineData44));
+_svg.polygons.push(el);
+el.append("svg:title").text("santa cruz");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("santa cruz");});
+var polylineFunction45 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData45 = [
+ {
+ "x": 306.77,
+"y": 92.811 
+},
+{
+ "x": 312.09,
+"y": 92.811 
+},
+{
+ "x": 312.58,
+"y": 131.25 
+},
+{
+ "x":  302.9,
+"y": 131.55 
+},
+{
+ "x": 299.52,
+"y": 132.46 
+},
+{
+ "x": 290.57,
+"y": 132.46 
+},
+{
+ "x": 279.69,
+"y": 133.67 
+},
+{
+ "x": 275.82,
+"y": 135.49 
+},
+{
+ "x": 264.69,
+"y": 135.49 
+},
+{
+ "x": 261.79,
+"y": 134.28 
+},
+{
+ "x": 255.99,
+"y": 137.91 
+},
+{
+ "x": 252.12,
+"y": 135.79 
+},
+{
+ "x":  246.8,
+"y":    137 
+},
+{
+ "x": 243.17,
+"y": 139.42 
+},
+{
+ "x": 241.96,
+"y": 138.52 
+},
+{
+ "x": 239.06,
+"y": 140.33 
+},
+{
+ "x": 239.06,
+"y":  136.7 
+},
+{
+ "x": 244.14,
+"y": 130.95 
+},
+{
+ "x": 247.04,
+"y": 130.04 
+},
+{
+ "x": 249.94,
+"y": 128.22 
+},
+{
+ "x": 250.67,
+"y": 126.41 
+},
+{
+ "x": 254.05,
+"y":  125.2 
+},
+{
+ "x": 251.39,
+"y": 119.14 
+},
+{
+ "x": 253.57,
+"y": 118.24 
+},
+{
+ "x": 255.99,
+"y": 110.37 
+},
+{
+ "x": 258.41,
+"y": 108.25 
+},
+{
+ "x": 258.65,
+"y":  103.4 
+},
+{
+ "x": 261.07,
+"y":  102.5 
+},
+{
+ "x": 261.55,
+"y": 100.38 
+},
+{
+ "x":  260.1,
+"y": 100.08 
+},
+{
+ "x": 264.94,
+"y": 97.351 
+},
+{
+ "x": 264.45,
+"y": 94.021 
+},
+{
+ "x":    263,
+"y": 92.811 
+},
+{
+ "x": 265.18,
+"y": 92.811 
+},
+{
+ "x": 264.94,
+"y": 91.903 
+},
+{
+ "x": 266.87,
+"y": 91.297 
+},
+{
+ "x": 268.32,
+"y": 92.811 
+},
+{
+ "x": 273.64,
+"y": 93.113 
+},
+{
+ "x": 306.77,
+"y": 92.811 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction45(polylineData45));
+_svg.polygons.push(el);
+el.append("svg:title").text("shasta");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("shasta");});
+var polylineFunction46 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData46 = [
+ {
+ "x": 326.12,
+"y": 175.75 
+},
+{
+ "x":  328.3,
+"y": 173.63 
+},
+{
+ "x":  328.3,
+"y":    170 
+},
+{
+ "x": 331.68,
+"y": 167.88 
+},
+{
+ "x": 335.55,
+"y": 171.51 
+},
+{
+ "x": 338.94,
+"y": 172.11 
+},
+{
+ "x":  339.9,
+"y": 173.33 
+},
+{
+ "x": 341.11,
+"y": 172.11 
+},
+{
+ "x": 348.13,
+"y": 172.42 
+},
+{
+ "x": 348.61,
+"y": 171.51 
+},
+{
+ "x": 368.44,
+"y": 172.11 
+},
+{
+ "x": 368.92,
+"y": 185.74 
+},
+{
+ "x": 347.64,
+"y": 185.74 
+},
+{
+ "x": 342.81,
+"y": 180.59 
+},
+{
+ "x": 338.45,
+"y": 182.41 
+},
+{
+ "x": 336.28,
+"y": 185.43 
+},
+{
+ "x": 326.12,
+"y": 187.25 
+},
+{
+ "x": 325.64,
+"y": 182.41 
+},
+{
+ "x": 324.19,
+"y":  181.2 
+},
+{
+ "x": 325.15,
+"y": 179.98 
+},
+{
+ "x": 326.12,
+"y": 175.75 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction46(polylineData46));
+_svg.polygons.push(el);
+el.append("svg:title").text("sierra");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("sierra");});
+var polylineFunction47 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData47 = [
+ {
+ "x": 306.77,
+"y": 92.811 
+},
+{
+ "x": 273.64,
+"y": 93.113 
+},
+{
+ "x": 268.32,
+"y": 92.811 
+},
+{
+ "x": 266.87,
+"y": 91.297 
+},
+{
+ "x": 264.94,
+"y": 91.903 
+},
+{
+ "x": 265.18,
+"y": 92.811 
+},
+{
+ "x":    263,
+"y": 92.811 
+},
+{
+ "x": 261.07,
+"y": 91.297 
+},
+{
+ "x": 262.52,
+"y": 88.573 
+},
+{
+ "x": 262.03,
+"y": 86.757 
+},
+{
+ "x":    263,
+"y": 85.243 
+},
+{
+ "x": 259.62,
+"y":  83.73 
+},
+{
+ "x": 258.41,
+"y": 85.849 
+},
+{
+ "x": 256.71,
+"y": 85.849 
+},
+{
+ "x": 251.88,
+"y": 89.784 
+},
+{
+ "x": 250.43,
+"y": 94.021 
+},
+{
+ "x":  246.8,
+"y": 90.995 
+},
+{
+ "x":  242.2,
+"y": 93.113 
+},
+{
+ "x": 241.96,
+"y": 98.864 
+},
+{
+ "x": 243.65,
+"y": 99.167 
+},
+{
+ "x": 245.11,
+"y": 100.98 
+},
+{
+ "x":  243.9,
+"y":  103.1 
+},
+{
+ "x":  242.2,
+"y": 100.38 
+},
+{
+ "x": 241.24,
+"y": 102.19 
+},
+{
+ "x": 239.54,
+"y": 101.89 
+},
+{
+ "x": 238.58,
+"y": 99.772 
+},
+{
+ "x": 231.56,
+"y": 98.259 
+},
+{
+ "x": 228.42,
+"y": 94.929 
+},
+{
+ "x": 227.45,
+"y": 94.021 
+},
+{
+ "x": 225.28,
+"y": 94.627 
+},
+{
+ "x": 222.37,
+"y": 90.389 
+},
+{
+ "x": 221.16,
+"y":  83.73 
+},
+{
+ "x": 213.18,
+"y": 82.822 
+},
+{
+ "x":  212.7,
+"y": 77.676 
+},
+{
+ "x": 214.15,
+"y": 75.255 
+},
+{
+ "x": 212.22,
+"y": 74.347 
+},
+{
+ "x": 212.22,
+"y": 71.622 
+},
+{
+ "x": 210.77,
+"y": 71.622 
+},
+{
+ "x": 212.22,
+"y": 69.201 
+},
+{
+ "x": 213.43,
+"y": 64.358 
+},
+{
+ "x": 211.73,
+"y":  63.45 
+},
+{
+ "x":  212.7,
+"y": 60.726 
+},
+{
+ "x": 211.25,
+"y": 59.212 
+},
+{
+ "x":  212.7,
+"y": 59.212 
+},
+{
+ "x": 213.91,
+"y": 56.186 
+},
+{
+ "x": 215.36,
+"y": 56.186 
+},
+{
+ "x":  218.5,
+"y": 53.158 
+},
+{
+ "x": 218.99,
+"y": 50.132 
+},
+{
+ "x": 306.53,
+"y": 50.132 
+},
+{
+ "x": 306.77,
+"y": 92.811 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction47(polylineData47));
+_svg.polygons.push(el);
+el.append("svg:title").text("siskiyou");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("siskiyou");});
+var polylineFunction48 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData48 = [
+ {
+ "x": 279.45,
+"y": 234.77 
+},
+{
+ "x": 281.14,
+"y": 234.47 
+},
+{
+ "x": 283.56,
+"y": 236.28 
+},
+{
+ "x": 285.49,
+"y": 234.17 
+},
+{
+ "x":  297.1,
+"y": 233.26 
+},
+{
+ "x":  297.1,
+"y": 245.37 
+},
+{
+ "x": 301.45,
+"y": 245.37 
+},
+{
+ "x": 300.49,
+"y": 251.42 
+},
+{
+ "x": 297.58,
+"y": 253.84 
+},
+{
+ "x": 295.65,
+"y": 257.47 
+},
+{
+ "x":  294.2,
+"y": 257.47 
+},
+{
+ "x": 292.26,
+"y": 258.68 
+},
+{
+ "x":  291.3,
+"y": 258.68 
+},
+{
+ "x": 286.94,
+"y": 258.99 
+},
+{
+ "x": 280.41,
+"y": 258.99 
+},
+{
+ "x": 278.96,
+"y":  260.5 
+},
+{
+ "x": 274.37,
+"y": 258.68 
+},
+{
+ "x": 278.96,
+"y": 259.29 
+},
+{
+ "x": 273.64,
+"y": 255.96 
+},
+{
+ "x": 273.64,
+"y": 254.45 
+},
+{
+ "x": 276.06,
+"y": 253.84 
+},
+{
+ "x": 274.85,
+"y": 252.63 
+},
+{
+ "x": 275.09,
+"y": 245.37 
+},
+{
+ "x": 281.86,
+"y": 245.37 
+},
+{
+ "x": 278.72,
+"y": 239.92 
+},
+{
+ "x": 279.45,
+"y": 234.77 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction48(polylineData48));
+_svg.polygons.push(el);
+el.append("svg:title").text("solano");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("solano");});
+var polylineFunction49 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData49 = [
+ {
+ "x": 268.56,
+"y": 252.63 
+},
+{
+ "x":  267.6,
+"y": 252.33 
+},
+{
+ "x": 265.66,
+"y": 254.75 
+},
+{
+ "x": 263.24,
+"y": 254.45 
+},
+{
+ "x": 264.69,
+"y": 255.35 
+},
+{
+ "x":    263,
+"y": 255.96 
+},
+{
+ "x": 259.62,
+"y": 252.33 
+},
+{
+ "x":  257.2,
+"y": 252.93 
+},
+{
+ "x": 246.32,
+"y": 245.37 
+},
+{
+ "x": 244.38,
+"y": 245.97 
+},
+{
+ "x": 240.75,
+"y": 244.46 
+},
+{
+ "x": 238.34,
+"y":  238.4 
+},
+{
+ "x": 236.16,
+"y": 235.68 
+},
+{
+ "x":  230.6,
+"y": 233.26 
+},
+{
+ "x": 224.79,
+"y": 224.18 
+},
+{
+ "x": 221.89,
+"y": 222.06 
+},
+{
+ "x": 222.37,
+"y": 220.85 
+},
+{
+ "x": 226.97,
+"y": 220.24 
+},
+{
+ "x": 226.97,
+"y": 219.03 
+},
+{
+ "x": 236.64,
+"y": 218.73 
+},
+{
+ "x": 236.64,
+"y": 217.22 
+},
+{
+ "x": 238.82,
+"y": 217.22 
+},
+{
+ "x": 239.06,
+"y": 216.31 
+},
+{
+ "x": 249.94,
+"y": 216.31 
+},
+{
+ "x": 250.43,
+"y": 217.22 
+},
+{
+ "x":  252.6,
+"y": 219.33 
+},
+{
+ "x":  254.3,
+"y": 222.97 
+},
+{
+ "x": 257.92,
+"y":  226.9 
+},
+{
+ "x": 256.71,
+"y": 230.84 
+},
+{
+ "x": 260.34,
+"y": 234.17 
+},
+{
+ "x": 261.55,
+"y": 236.89 
+},
+{
+ "x": 263.97,
+"y": 238.71 
+},
+{
+ "x": 263.49,
+"y": 240.52 
+},
+{
+ "x": 265.42,
+"y": 241.73 
+},
+{
+ "x": 264.94,
+"y": 243.25 
+},
+{
+ "x": 266.39,
+"y": 243.55 
+},
+{
+ "x": 269.05,
+"y": 250.21 
+},
+{
+ "x": 268.56,
+"y": 252.63 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction49(polylineData49));
+_svg.polygons.push(el);
+el.append("svg:title").text("sonoma");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("sonoma");});
+var polylineFunction50 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData50 = [
+ {
+ "x": 352.48,
+"y": 281.38 
+},
+{
+ "x": 327.09,
+"y":  294.1 
+},
+{
+ "x": 327.81,
+"y": 297.12 
+},
+{
+ "x": 316.93,
+"y": 307.42 
+},
+{
+ "x": 315.24,
+"y":  305.3 
+},
+{
+ "x": 313.55,
+"y": 306.51 
+},
+{
+ "x": 311.13,
+"y":  305.6 
+},
+{
+ "x": 309.19,
+"y": 306.51 
+},
+{
+ "x": 309.19,
+"y": 304.39 
+},
+{
+ "x": 307.74,
+"y": 302.88 
+},
+{
+ "x":  307.5,
+"y": 300.15 
+},
+{
+ "x": 308.71,
+"y": 300.15 
+},
+{
+ "x": 309.43,
+"y": 296.22 
+},
+{
+ "x": 309.19,
+"y":  294.7 
+},
+{
+ "x":  307.5,
+"y":  294.7 
+},
+{
+ "x": 306.29,
+"y": 292.89 
+},
+{
+ "x": 307.02,
+"y": 291.68 
+},
+{
+ "x": 306.05,
+"y": 291.07 
+},
+{
+ "x": 306.29,
+"y": 289.25 
+},
+{
+ "x": 317.41,
+"y": 278.06 
+},
+{
+ "x": 327.09,
+"y": 274.73 
+},
+{
+ "x": 329.75,
+"y": 275.94 
+},
+{
+ "x": 330.47,
+"y": 274.42 
+},
+{
+ "x": 329.75,
+"y": 273.51 
+},
+{
+ "x": 329.99,
+"y": 258.08 
+},
+{
+ "x": 352.48,
+"y": 281.38 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction50(polylineData50));
+_svg.polygons.push(el);
+el.append("svg:title").text("stanislaus");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("stanislaus");});
+var polylineFunction51 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData51 = [
+ {
+ "x": 301.21,
+"y": 222.97 
+},
+{
+ "x": 300.24,
+"y": 220.24 
+},
+{
+ "x": 297.83,
+"y": 222.06 
+},
+{
+ "x": 295.65,
+"y":    216 
+},
+{
+ "x": 293.71,
+"y": 216.31 
+},
+{
+ "x": 292.26,
+"y":  215.4 
+},
+{
+ "x": 292.51,
+"y": 213.58 
+},
+{
+ "x": 291.54,
+"y": 210.56 
+},
+{
+ "x": 293.23,
+"y": 209.35 
+},
+{
+ "x": 291.05,
+"y": 205.71 
+},
+{
+ "x": 287.43,
+"y": 202.69 
+},
+{
+ "x":  286.7,
+"y": 199.96 
+},
+{
+ "x": 287.43,
+"y": 194.21 
+},
+{
+ "x": 300.24,
+"y":  192.7 
+},
+{
+ "x": 299.52,
+"y": 195.42 
+},
+{
+ "x": 300.49,
+"y": 196.94 
+},
+{
+ "x": 301.45,
+"y": 205.11 
+},
+{
+ "x": 300.73,
+"y": 206.62 
+},
+{
+ "x": 302.18,
+"y": 213.28 
+},
+{
+ "x": 303.39,
+"y": 211.16 
+},
+{
+ "x": 308.95,
+"y": 209.35 
+},
+{
+ "x": 308.95,
+"y": 212.98 
+},
+{
+ "x": 307.02,
+"y": 212.98 
+},
+{
+ "x": 307.02,
+"y": 222.06 
+},
+{
+ "x": 306.05,
+"y": 222.06 
+},
+{
+ "x": 306.29,
+"y": 223.27 
+},
+{
+ "x": 301.21,
+"y": 222.97 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction51(polylineData51));
+_svg.polygons.push(el);
+el.append("svg:title").text("sutter");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("sutter");});
+var polylineFunction52 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData52 = [
+ {
+ "x": 305.32,
+"y": 131.55 
+},
+{
+ "x": 305.81,
+"y": 136.09 
+},
+{
+ "x": 309.92,
+"y": 137.31 
+},
+{
+ "x": 311.13,
+"y": 142.75 
+},
+{
+ "x": 306.53,
+"y": 145.48 
+},
+{
+ "x": 306.29,
+"y": 146.99 
+},
+{
+ "x": 307.26,
+"y": 146.99 
+},
+{
+ "x": 307.02,
+"y": 148.81 
+},
+{
+ "x": 301.21,
+"y": 150.93 
+},
+{
+ "x": 301.45,
+"y": 153.35 
+},
+{
+ "x": 299.76,
+"y": 153.95 
+},
+{
+ "x": 299.28,
+"y": 156.98 
+},
+{
+ "x": 296.86,
+"y": 156.98 
+},
+{
+ "x": 295.17,
+"y":  159.1 
+},
+{
+ "x": 295.65,
+"y": 160.61 
+},
+{
+ "x": 292.02,
+"y": 162.43 
+},
+{
+ "x": 282.11,
+"y": 162.13 
+},
+{
+ "x": 281.86,
+"y": 166.67 
+},
+{
+ "x": 244.62,
+"y": 166.36 
+},
+{
+ "x": 243.41,
+"y": 160.61 
+},
+{
+ "x": 244.14,
+"y": 160.01 
+},
+{
+ "x": 245.35,
+"y": 158.49 
+},
+{
+ "x": 245.11,
+"y": 156.98 
+},
+{
+ "x": 242.93,
+"y": 153.95 
+},
+{
+ "x": 243.41,
+"y": 152.14 
+},
+{
+ "x":  242.2,
+"y": 150.62 
+},
+{
+ "x": 242.93,
+"y": 148.51 
+},
+{
+ "x": 241.96,
+"y": 146.69 
+},
+{
+ "x":  242.2,
+"y": 141.54 
+},
+{
+ "x": 239.06,
+"y": 140.33 
+},
+{
+ "x": 241.96,
+"y": 138.52 
+},
+{
+ "x": 243.17,
+"y": 139.42 
+},
+{
+ "x":  246.8,
+"y":    137 
+},
+{
+ "x": 252.12,
+"y": 135.79 
+},
+{
+ "x": 255.99,
+"y": 137.91 
+},
+{
+ "x": 261.79,
+"y": 134.28 
+},
+{
+ "x": 264.69,
+"y": 135.49 
+},
+{
+ "x": 275.82,
+"y": 135.49 
+},
+{
+ "x": 279.69,
+"y": 133.67 
+},
+{
+ "x": 290.57,
+"y": 132.46 
+},
+{
+ "x": 299.52,
+"y": 132.46 
+},
+{
+ "x":  302.9,
+"y": 131.55 
+},
+{
+ "x": 305.32,
+"y": 131.55 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction52(polylineData52));
+_svg.polygons.push(el);
+el.append("svg:title").text("tehama");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("tehama");});
+var polylineFunction53 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData53 = [
+ {
+ "x": 218.99,
+"y": 155.77 
+},
+{
+ "x":  218.5,
+"y": 117.33 
+},
+{
+ "x":  217.3,
+"y": 116.12 
+},
+{
+ "x":  217.3,
+"y": 110.97 
+},
+{
+ "x": 215.36,
+"y": 107.94 
+},
+{
+ "x": 218.02,
+"y": 105.83 
+},
+{
+ "x": 220.68,
+"y": 107.94 
+},
+{
+ "x": 222.62,
+"y": 105.83 
+},
+{
+ "x": 224.07,
+"y": 100.68 
+},
+{
+ "x": 221.16,
+"y": 97.956 
+},
+{
+ "x": 222.86,
+"y": 97.654 
+},
+{
+ "x": 222.86,
+"y": 94.324 
+},
+{
+ "x": 224.31,
+"y": 93.416 
+},
+{
+ "x": 225.28,
+"y": 94.627 
+},
+{
+ "x": 227.45,
+"y": 94.021 
+},
+{
+ "x": 233.01,
+"y": 99.167 
+},
+{
+ "x": 238.58,
+"y": 99.772 
+},
+{
+ "x": 239.54,
+"y": 101.89 
+},
+{
+ "x": 241.24,
+"y": 102.19 
+},
+{
+ "x":  242.2,
+"y": 100.38 
+},
+{
+ "x":  243.9,
+"y":  103.1 
+},
+{
+ "x": 245.11,
+"y": 100.98 
+},
+{
+ "x": 243.65,
+"y": 99.167 
+},
+{
+ "x": 241.96,
+"y": 98.864 
+},
+{
+ "x":  242.2,
+"y": 93.113 
+},
+{
+ "x":  246.8,
+"y": 90.995 
+},
+{
+ "x": 250.43,
+"y": 94.021 
+},
+{
+ "x": 251.88,
+"y": 89.784 
+},
+{
+ "x": 256.71,
+"y": 85.849 
+},
+{
+ "x": 258.41,
+"y": 85.849 
+},
+{
+ "x": 259.62,
+"y":  83.73 
+},
+{
+ "x":    263,
+"y": 85.243 
+},
+{
+ "x": 262.03,
+"y": 86.757 
+},
+{
+ "x": 262.52,
+"y": 88.573 
+},
+{
+ "x": 261.07,
+"y": 91.297 
+},
+{
+ "x": 264.45,
+"y": 94.021 
+},
+{
+ "x": 264.94,
+"y": 97.351 
+},
+{
+ "x":  260.1,
+"y":  99.47 
+},
+{
+ "x": 261.55,
+"y": 100.38 
+},
+{
+ "x": 261.07,
+"y":  102.5 
+},
+{
+ "x": 258.65,
+"y":  103.4 
+},
+{
+ "x": 258.41,
+"y": 108.25 
+},
+{
+ "x": 255.99,
+"y": 110.37 
+},
+{
+ "x": 253.57,
+"y": 118.24 
+},
+{
+ "x": 251.39,
+"y": 119.14 
+},
+{
+ "x": 254.05,
+"y":  125.2 
+},
+{
+ "x": 252.12,
+"y":  125.5 
+},
+{
+ "x": 249.94,
+"y": 128.22 
+},
+{
+ "x": 247.04,
+"y": 130.04 
+},
+{
+ "x": 244.14,
+"y": 130.95 
+},
+{
+ "x": 239.06,
+"y":  136.7 
+},
+{
+ "x": 239.06,
+"y": 140.33 
+},
+{
+ "x":  242.2,
+"y": 141.54 
+},
+{
+ "x": 241.96,
+"y": 146.69 
+},
+{
+ "x": 242.93,
+"y": 148.51 
+},
+{
+ "x":  242.2,
+"y": 150.62 
+},
+{
+ "x": 243.41,
+"y": 152.14 
+},
+{
+ "x": 242.93,
+"y": 153.95 
+},
+{
+ "x": 244.86,
+"y": 156.07 
+},
+{
+ "x": 218.99,
+"y": 155.77 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction53(polylineData53));
+_svg.polygons.push(el);
+el.append("svg:title").text("trinity");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("trinity");});
+var polylineFunction54 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData54 = [
+ {
+ "x": 452.84,
+"y": 378.55 
+},
+{
+ "x": 389.24,
+"y": 379.15 
+},
+{
+ "x": 388.75,
+"y": 354.03 
+},
+{
+ "x": 391.42,
+"y": 353.73 
+},
+{
+ "x": 391.66,
+"y": 346.46 
+},
+{
+ "x": 389.24,
+"y": 346.46 
+},
+{
+ "x":    389,
+"y": 342.22 
+},
+{
+ "x":  387.3,
+"y": 341.92 
+},
+{
+ "x": 392.14,
+"y": 337.38 
+},
+{
+ "x": 398.43,
+"y": 337.38 
+},
+{
+ "x": 398.67,
+"y": 332.54 
+},
+{
+ "x": 412.21,
+"y": 332.84 
+},
+{
+ "x": 412.21,
+"y":  328.6 
+},
+{
+ "x": 438.09,
+"y":  327.7 
+},
+{
+ "x": 439.06,
+"y": 329.81 
+},
+{
+ "x": 437.36,
+"y": 331.33 
+},
+{
+ "x":  439.3,
+"y": 332.54 
+},
+{
+ "x": 440.27,
+"y": 335.26 
+},
+{
+ "x": 441.72,
+"y": 335.57 
+},
+{
+ "x": 441.23,
+"y": 337.68 
+},
+{
+ "x": 443.41,
+"y":  339.8 
+},
+{
+ "x": 442.93,
+"y": 342.53 
+},
+{
+ "x":  445.1,
+"y": 344.95 
+},
+{
+ "x": 447.04,
+"y": 344.65 
+},
+{
+ "x": 447.04,
+"y": 347.98 
+},
+{
+ "x": 448.97,
+"y": 349.19 
+},
+{
+ "x":    448,
+"y": 353.12 
+},
+{
+ "x": 449.21,
+"y": 356.75 
+},
+{
+ "x": 451.39,
+"y": 359.48 
+},
+{
+ "x": 450.42,
+"y":  362.5 
+},
+{
+ "x": 451.39,
+"y": 363.11 
+},
+{
+ "x":  452.6,
+"y": 368.56 
+},
+{
+ "x": 451.87,
+"y": 370.37 
+},
+{
+ "x": 453.57,
+"y": 370.98 
+},
+{
+ "x": 453.81,
+"y": 374.61 
+},
+{
+ "x": 452.84,
+"y": 375.52 
+},
+{
+ "x": 452.84,
+"y": 378.55 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction54(polylineData54));
+_svg.polygons.push(el);
+el.append("svg:title").text("tulare");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("tulare");});
+var polylineFunction55 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData55 = [
+ {
+ "x": 399.64,
+"y": 275.33 
+},
+{
+ "x": 396.25,
+"y": 271.09 
+},
+{
+ "x": 388.51,
+"y": 266.86 
+},
+{
+ "x": 384.64,
+"y": 268.97 
+},
+{
+ "x": 383.92,
+"y":  271.4 
+},
+{
+ "x":  375.7,
+"y": 274.42 
+},
+{
+ "x":  365.3,
+"y":    272 
+},
+{
+ "x": 363.36,
+"y": 274.12 
+},
+{
+ "x": 361.43,
+"y": 273.21 
+},
+{
+ "x": 357.07,
+"y": 276.24 
+},
+{
+ "x": 354.66,
+"y": 275.94 
+},
+{
+ "x": 353.69,
+"y": 277.15 
+},
+{
+ "x": 355.14,
+"y": 280.17 
+},
+{
+ "x": 352.48,
+"y": 281.38 
+},
+{
+ "x": 341.36,
+"y": 270.79 
+},
+{
+ "x": 346.92,
+"y": 264.13 
+},
+{
+ "x": 345.95,
+"y": 263.53 
+},
+{
+ "x": 346.68,
+"y": 262.01 
+},
+{
+ "x": 347.64,
+"y": 262.32 
+},
+{
+ "x": 352.24,
+"y": 255.35 
+},
+{
+ "x": 358.28,
+"y": 245.97 
+},
+{
+ "x": 366.51,
+"y":  238.4 
+},
+{
+ "x": 374.49,
+"y": 242.94 
+},
+{
+ "x": 376.18,
+"y": 240.82 
+},
+{
+ "x": 378.84,
+"y": 239.92 
+},
+{
+ "x": 380.53,
+"y": 240.22 
+},
+{
+ "x": 381.26,
+"y": 242.94 
+},
+{
+ "x": 383.68,
+"y": 244.46 
+},
+{
+ "x": 383.19,
+"y": 245.37 
+},
+{
+ "x": 384.16,
+"y": 245.37 
+},
+{
+ "x": 383.92,
+"y": 246.58 
+},
+{
+ "x": 385.37,
+"y": 247.79 
+},
+{
+ "x": 385.13,
+"y": 251.72 
+},
+{
+ "x": 387.06,
+"y": 251.72 
+},
+{
+ "x": 388.75,
+"y": 254.45 
+},
+{
+ "x": 389.96,
+"y": 253.54 
+},
+{
+ "x": 391.66,
+"y": 256.56 
+},
+{
+ "x": 393.35,
+"y": 255.66 
+},
+{
+ "x": 397.94,
+"y": 258.68 
+},
+{
+ "x": 397.46,
+"y": 263.53 
+},
+{
+ "x": 398.19,
+"y": 265.04 
+},
+{
+ "x": 402.06,
+"y": 267.46 
+},
+{
+ "x": 401.81,
+"y": 269.28 
+},
+{
+ "x": 403.02,
+"y": 269.88 
+},
+{
+ "x": 401.81,
+"y":  271.7 
+},
+{
+ "x": 403.02,
+"y": 272.91 
+},
+{
+ "x": 399.64,
+"y": 275.33 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction55(polylineData55));
+_svg.polygons.push(el);
+el.append("svg:title").text("tuolumne");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("tuolumne");});
+var polylineFunction56 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData56 = [
+ {
+ "x": 415.36,
+"y":    430 
+},
+{
+ "x": 426.96,
+"y": 458.15 
+},
+{
+ "x": 426.48,
+"y": 460.27 
+},
+{
+ "x": 424.79,
+"y": 460.58 
+},
+{
+ "x": 425.03,
+"y": 463.91 
+},
+{
+ "x": 420.44,
+"y": 463.91 
+},
+{
+ "x": 412.94,
+"y": 467.54 
+},
+{
+ "x": 413.18,
+"y": 469.05 
+},
+{
+ "x": 408.59,
+"y": 466.93 
+},
+{
+ "x": 406.65,
+"y": 467.23 
+},
+{
+ "x": 404.23,
+"y": 465.12 
+},
+{
+ "x": 400.85,
+"y": 457.85 
+},
+{
+ "x": 396.98,
+"y": 456.34 
+},
+{
+ "x": 391.66,
+"y": 450.59 
+},
+{
+ "x": 392.14,
+"y": 425.77 
+},
+{
+ "x": 394.32,
+"y": 425.77 
+},
+{
+ "x": 394.56,
+"y": 426.67 
+},
+{
+ "x": 398.91,
+"y": 426.67 
+},
+{
+ "x": 398.91,
+"y": 427.89 
+},
+{
+ "x":  400.6,
+"y": 428.49 
+},
+{
+ "x":  400.6,
+"y": 430.31 
+},
+{
+ "x": 413.66,
+"y":    430 
+},
+{
+ "x": 415.36,
+"y":    430 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction56(polylineData56));
+_svg.polygons.push(el);
+el.append("svg:title").text("ventura");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("ventura");});
+var polylineFunction57 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData57 = [
+ {
+ "x": 301.45,
+"y": 245.37 
+},
+{
+ "x":  297.1,
+"y": 245.37 
+},
+{
+ "x":  297.1,
+"y": 233.26 
+},
+{
+ "x": 285.49,
+"y": 234.17 
+},
+{
+ "x": 283.56,
+"y": 236.28 
+},
+{
+ "x": 281.14,
+"y": 234.47 
+},
+{
+ "x": 279.45,
+"y": 234.77 
+},
+{
+ "x":    278,
+"y": 229.32 
+},
+{
+ "x": 276.79,
+"y": 229.02 
+},
+{
+ "x": 277.27,
+"y": 227.81 
+},
+{
+ "x": 275.82,
+"y":  226.9 
+},
+{
+ "x": 275.82,
+"y": 225.69 
+},
+{
+ "x": 273.88,
+"y": 224.18 
+},
+{
+ "x": 274.37,
+"y": 223.27 
+},
+{
+ "x": 272.43,
+"y": 218.12 
+},
+{
+ "x":  267.6,
+"y": 216.31 
+},
+{
+ "x": 266.63,
+"y": 213.58 
+},
+{
+ "x": 267.35,
+"y": 212.67 
+},
+{
+ "x": 291.78,
+"y": 212.37 
+},
+{
+ "x": 292.51,
+"y": 213.58 
+},
+{
+ "x": 292.26,
+"y":  215.4 
+},
+{
+ "x": 293.71,
+"y": 216.31 
+},
+{
+ "x": 295.65,
+"y":    216 
+},
+{
+ "x": 297.83,
+"y": 222.06 
+},
+{
+ "x": 300.24,
+"y": 220.24 
+},
+{
+ "x": 301.21,
+"y": 222.06 
+},
+{
+ "x": 300.24,
+"y": 225.08 
+},
+{
+ "x": 300.97,
+"y": 227.81 
+},
+{
+ "x": 302.42,
+"y": 227.81 
+},
+{
+ "x": 305.32,
+"y": 231.74 
+},
+{
+ "x": 305.32,
+"y": 233.56 
+},
+{
+ "x": 303.15,
+"y": 235.38 
+},
+{
+ "x": 305.32,
+"y": 236.59 
+},
+{
+ "x": 304.36,
+"y": 239.31 
+},
+{
+ "x": 304.84,
+"y": 240.52 
+},
+{
+ "x": 301.45,
+"y": 245.37 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction57(polylineData57));
+_svg.polygons.push(el);
+el.append("svg:title").text("yolo");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("yolo");});
+var polylineFunction58 = d3.svg.line().x(function(d) { return d.x; }).y(function(d) { return d.y; }).interpolate("linear");
+var polylineData58 = [
+ {
+ "x": 308.95,
+"y": 209.35 
+},
+{
+ "x": 303.39,
+"y": 211.16 
+},
+{
+ "x": 302.18,
+"y": 213.28 
+},
+{
+ "x": 300.73,
+"y": 206.62 
+},
+{
+ "x": 301.45,
+"y": 205.11 
+},
+{
+ "x": 300.49,
+"y": 196.94 
+},
+{
+ "x": 299.52,
+"y": 195.42 
+},
+{
+ "x": 300.73,
+"y": 192.09 
+},
+{
+ "x": 303.63,
+"y": 193.61 
+},
+{
+ "x": 310.64,
+"y": 189.97 
+},
+{
+ "x": 312.09,
+"y": 185.13 
+},
+{
+ "x":    315,
+"y":  181.8 
+},
+{
+ "x": 316.69,
+"y":  182.1 
+},
+{
+ "x": 316.93,
+"y":  181.2 
+},
+{
+ "x": 320.32,
+"y":  181.5 
+},
+{
+ "x": 321.04,
+"y": 179.68 
+},
+{
+ "x": 322.49,
+"y": 179.38 
+},
+{
+ "x": 322.73,
+"y": 178.17 
+},
+{
+ "x": 326.12,
+"y": 175.75 
+},
+{
+ "x": 325.88,
+"y": 178.77 
+},
+{
+ "x": 324.19,
+"y":  181.2 
+},
+{
+ "x": 325.64,
+"y": 182.41 
+},
+{
+ "x": 326.12,
+"y": 187.25 
+},
+{
+ "x": 321.04,
+"y": 188.76 
+},
+{
+ "x": 320.07,
+"y": 190.88 
+},
+{
+ "x": 318.38,
+"y": 191.18 
+},
+{
+ "x": 317.41,
+"y": 193.61 
+},
+{
+ "x": 315.24,
+"y": 194.51 
+},
+{
+ "x": 314.51,
+"y": 200.26 
+},
+{
+ "x":    315,
+"y": 207.23 
+},
+{
+ "x":  313.3,
+"y": 206.62 
+},
+{
+ "x": 308.95,
+"y": 209.35 
+} 
+];
+el = svg.append("path").attr("fill", "rgb(255, 255, 255)").attr("stroke", "rgb(0, 0, 0)").attr("d", polylineFunction58(polylineData58));
+_svg.polygons.push(el);
+el.append("svg:title").text("yuba");
+el.on("mouseover", function() { d3.event.target.setAttribute("stroke-width", 2)}).on("mouseout", function() { d3.event.target.setAttribute("stroke-width", 1);});
+el.on("click", function() { alert("yuba");});</script>
+</body>
+</html>

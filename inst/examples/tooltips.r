@@ -1,4 +1,5 @@
-source("d3Dev.R")
+library(RD3Device)
+
 dev = d3Device(file = "../../foo.js")
 with(mtcars, plot(mpg ~ wt, col = c("red", "green", "blue")[factor(gear)],
                    xlab = "Weight", ylab = "Miles per gallon", cex = 2))
@@ -36,5 +37,6 @@ i = txt == "Miles per gallon"
 code[[which(i)]] = c(code[[which(i)]],
                       'el.append("svg:title").text("Miles/ US gallon");')
 
-cat(unlist(code), file = "../../foo.js", sep = "\n")
+addToHTMLTemplate(code, "mtcars.html")
+#cat(unlist(code), file = "../../foo.js", sep = "\n")
 
